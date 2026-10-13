@@ -1,10 +1,10 @@
 # Handoff
 
-更新时间：2026-10-13 15:00:40 +0800
+更新时间：2026-10-13 15:12:14+08:00
 
-## 三语产品文档（本地验收完成，准备预览）
+## 三语产品文档（已发布并完成生产验收）
 
-- 分支 `codex/three-language-docs`；简体原路径保留，新增 `/zh-hant/`、`/en/`，16 个源页面对应 32 篇完整译文，共 48 个内容页面。
+- PR [#3](https://github.com/nicerobotics/docs/pull/3) 已合并到 `main`（`3580ca41c0cff36ae98aed245accf08f69494041`）；简体原路径保留，新增 `/zh-hant/`、`/en/`，16 个源页面对应 32 篇完整译文，共 48 个内容页面。
 - 语言框使用文字与翻译图标，无旗帜；切换保留产品、查询参数和对应章节。导航、侧栏、按钮、搜索和元信息已本地化。
 - 仅首次从站外进入 `/` 自动选择：手动偏好（365 天）→浏览器任意明确简体标记→浏览器支持语言排序→IP 兜底。产品直达页与语言前缀首页不跳转。
 - 新增独立 Node.js `GET /api/locale`，只读取 Vercel 地区头、只返回语言、禁止缓存；超时 1.2 秒或用户已操作不跳转。全站仍静态输出。
@@ -14,7 +14,10 @@
 - 已通过：content lint、i18n lint、7 项语言/API 单测、Astro check（0 errors/warnings/hints）、build（48 个内容页面 + 404，三套各 16 页的 Pagefind 索引）。
 - Python Playwright 验证通过：全部 48 页静态链接/资源/锚点/SEO 审计；首页语言与故障场景；三语 × 桌面/手机 × 浅色/深色 × 6 页 = 72 组页面检查，菜单、同页切换、查询参数与三语搜索。浏览器存储被拒时仍能切换；主题初始化也容错。
 - 本机预览 `http://127.0.0.1:4321/`；浏览器测试使用临时 Python venv，运行说明已写入 README。
-- 已核对部署目标为 NI Corporate / docs (`prj_Y5hrSGAEBBI9098IzW2wcVKNsgwD`)，生产域名 `docs.nicerobotics.hk`，Node 24；远端 main 仍为 `91f4289`。尚待远端预览验证地区接口，再完成发布核验。
+- 已发布到 NI Corporate / docs (`prj_Y5hrSGAEBBI9098IzW2wcVKNsgwD`)，生产域名 `docs.nicerobotics.hk`，Node 24；应用发布 `dpl_4ZQsBGgZMk43PHT9WGGczbENxT7C` 为 READY，对应合并提交 `3580ca4`。本次交接提交只更新此文件，不改应用行为。
+- 预览运行时曾因 `.ts` 导入在 Vercel 编译后的 JS 中保留而返回 500；`e4c90e2` 已把地区映射保留在 Function 入口，仅保留类型导入。预览及生产实际接口均为 200，响应 `private, no-store`，对应修复/生产部署的 error/fatal 日志查询无记录。
+- 生产浏览器已验证三语首页、四类产品、Pagefind 搜索、同产品三向语言切换、查询参数与章节映射；全部 48 个生产页面和简体旧链接已检查。线上地区结果只验证实际访问出口，CN/TW/HK/MO/MY 等映射由接口单测覆盖。
+- 首版待斟酌商品名集中在 `I18N-GLOSSARY.md`；原图/PDF/STEP 中的中文保持原样，关键内容有网页译文。无后续技术阻塞。
 - 保留原有未提交交接内容。下方为之前的交接记录。
 
 ---
