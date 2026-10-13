@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { browserLocale, countryLocale, localizedPath, readPreference, translatedHash } from '../src/i18n/locales.ts';
+import { browserLocale, localizedPath, readPreference, translatedHash } from '../src/i18n/locales.ts';
 import { GET } from '../api/locale.ts';
 
 test('explicit Simplified Chinese takes precedence over browser ordering', () => {
@@ -15,11 +15,11 @@ test('other supported languages follow browser order; generic Chinese defaults t
   assert.equal(browserLocale(['fr', 'zh']), 'zh-CN');
   assert.equal(browserLocale(['de', 'ja']), null);
 });
-test('geolocation is only a coarse fallback', () => {
-  for (const country of ['TW', 'HK', 'MO']) assert.equal(countryLocale(country), 'zh-Hant');
-  assert.equal(countryLocale('CN'), 'zh-CN');
-  for (const country of ['MY', 'US', 'SG']) assert.equal(countryLocale(country), 'en');
-  for (const country of [null, '', 'unknown', 'XX', 'ZZ']) assert.equal(countryLocale(country), null);
+test('geolocation is only a coarse fallback', async () => {
+  for (const [country, locale] of [['CN', 'zh-CN'], ['TW', 'zh-Hant'], ['HK', 'zh-Hant'], ['MO', 'zh-Hant'], ['MY', 'en'], ['US', 'en'], ['SG', 'en'], ['', null], ['unknown', null], ['XX', null], ['ZZ', null]]) {
+    const headers = country ? { 'x-vercel-ip-country': country } : {};
+    assert.deepEqual(await GET(new Request('https://example.test/api/locale', { headers })).json(), { locale });
+  }
 });
 test('manual preference requires a supported locale and an unexpired timestamp', () => {
   assert.equal(readPreference(JSON.stringify({ locale: 'en', expiresAt: 101 }), 100), 'en');
@@ -39,9 +39,9 @@ test('translated anchors preserve the equivalent section or fall back to page to
   assert.equal(translatedHash('#_top', [], []), '#_top');
 });
 test('geolocation endpoint returns only locale and is never cached', async () => {
-  for (const country of ['CN', 'TW', 'US', 'MY', '']) {
+  for (const [country, locale] of [['CN', 'zh-CN'], ['TW', 'zh-Hant'], ['US', 'en'], ['MY', 'en'], ['', null]]) {
     const response = GET(new Request('https://example.test/api/locale', { headers: { 'x-vercel-ip-country': country } }));
-    assert.deepEqual(await response.json(), { locale: countryLocale(country) });
+    assert.deepEqual(await response.json(), { locale });
     for (const name of ['Cache-Control', 'CDN-Cache-Control', 'Vercel-CDN-Cache-Control']) assert.match(response.headers.get(name), /no-store/);
   }
 });
