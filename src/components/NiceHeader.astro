@@ -6,38 +6,41 @@ import SiteTitle from '@astrojs/starlight/components/SiteTitle.astro';
 import SocialIcons from '@astrojs/starlight/components/SocialIcons.astro';
 import NiceIcon from './NiceIcon.astro';
 import NiceThemeToggle from './NiceThemeToggle.astro';
+import NiceLanguageSelect from './NiceLanguageSelect.astro';
+import { localizedPath, splitPath } from '../i18n/locales';
 
 const shouldRenderSearch =
 	config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro';
 
-const pathname = Astro.url.pathname;
+const { locale, path: pathname } = splitPath(Astro.url.pathname);
+const t = Astro.locals.t;
 const navItems: Array<{
 	label: string;
 	href: string;
 	icon: string;
 	match: (path: string) => boolean;
 }> = [
-	{ label: '首页', href: '/', icon: 'home', match: (path: string) => path === '/' },
+	{ label: t('nice.home'), href: '/', icon: 'home', match: (path: string) => path === '/' },
 	{
-		label: '传动',
+		label: t('nice.transmission'),
 		href: '/transmission/gear/',
 		icon: 'gear',
 		match: (path: string) => path.startsWith('/transmission/'),
 	},
 	{
-		label: '硬件',
+		label: t('nice.hardware'),
 		href: '/hardware/tube-plugs/',
 		icon: 'gem',
 		match: (path: string) => path.startsWith('/hardware/'),
 	},
 	{
-		label: '结构',
+		label: t('nice.structure'),
 		href: '/structure/tube/',
 		icon: 'chimney',
 		match: (path: string) => path.startsWith('/structure/'),
 	},
 	{
-		label: '轮子',
+		label: t('nice.wheels'),
 		href: '/wheels/silicone-wheel/',
 		icon: 'truck-monster',
 		match: (path: string) => path.startsWith('/wheels/'),
@@ -52,6 +55,7 @@ const navItems: Array<{
 				<SiteTitle />
 			</div>
 			<div class="nice-actions print:hidden">
+				<NiceLanguageSelect />
 				<div class="nice-header-controls">
 					<div class="nice-social-icons">
 						<SocialIcons />
@@ -63,7 +67,7 @@ const navItems: Array<{
 					href="https://nicerobotics.taobao.com/shop/view_shop.htm?appUid=RAzN8HWJdjiTsH6vMYrM9m1KNMFvi4PetiJdDkWp83MRuUBb3Jb&spm=a21n57.1.hoverItem.1"
 					target="_blank"
 					rel="noreferrer"
-					aria-label="淘宝店铺"
+					aria-label={t('nice.shop')}
 				>
 					<span class="nice-shop-icon nice-taobao-icon" aria-hidden="true"></span>
 				</a>
@@ -72,7 +76,7 @@ const navItems: Array<{
 					href="https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
 					target="_blank"
 					rel="noreferrer"
-					aria-label="Onshape 文档"
+					aria-label={t('nice.onshape')}
 				>
 					<span class="nice-shop-icon nice-onshape-icon" aria-hidden="true"></span>
 				</a>
@@ -80,11 +84,11 @@ const navItems: Array<{
 			</div>
 		</div>
 	</div>
-	<nav class="nice-section-nav print:hidden" aria-label="产品分类">
+	<nav class="nice-section-nav print:hidden" aria-label={t('nice.categories')}>
 		<div class="nice-section-inner">
 			{
 				navItems.map((item) => (
-					<a class:list={{ 'nice-section-link': true, active: item.match(pathname) }} href={item.href}>
+					<a class:list={{ 'nice-section-link': true, active: item.match(pathname) }} href={localizedPath(item.href, locale)}>
 						<NiceIcon name={item.icon} size="1rem" />
 						<span>{item.label}</span>
 					</a>
@@ -93,6 +97,15 @@ const navItems: Array<{
 		</div>
 	</nav>
 </header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('.nice-header');
+  if (header) {
+    const syncHeight = () => document.documentElement.style.setProperty('--sl-nav-height', `${header.getBoundingClientRect().height}px`);
+    syncHeight();
+    new ResizeObserver(syncHeight).observe(header);
+  }
+</script>
 
 <style>
 	@layer starlight.core {
@@ -134,6 +147,7 @@ const navItems: Array<{
 		}
 
 		.nice-actions {
+			flex-wrap: wrap;
 			gap: 0.75rem;
 			justify-self: end;
 			min-width: 0;
@@ -320,6 +334,16 @@ const navItems: Array<{
 				margin-inline-start: 0;
 			}
 
+		}
+		@media (max-width: 40rem) {
+			.nice-brand-inner { grid-template-columns: minmax(0, 1fr); gap: 0.25rem; }
+			.nice-actions { justify-self: stretch; justify-content: flex-start; gap: 0.4rem; }
+			:global(html[data-has-sidebar]) .nice-brand-inner {
+				padding-inline-start: var(--nice-shell-edge);
+			}
+			:global(html[data-has-sidebar]) .title-wrapper {
+				margin-inline-start: calc(var(--sl-menu-button-size) + 0.75rem);
+			}
 		}
 	}
 </style>

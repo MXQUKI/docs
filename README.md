@@ -12,6 +12,7 @@
 - 文档作者不需要修改导航组件、全局样式、构建脚本或页面框架。
 - 常见内容模式必须通过封装组件表达，不在 MDX 中手写脚手架 HTML。
 - 默认生产域名为 `docs.nicerobotics.hk`。
+- 网站支持简体中文、繁體中文与 English；三语术语和待斟酌商品名见 [三语术语表](agent-logs/I18N-GLOSSARY.md)。
 
 ## 技术栈
 
@@ -23,6 +24,30 @@
 - NI Corporate Vercel
 
 默认不引入 Supabase、SSR、Edge Runtime 或额外 Vercel adapter。只有存在明确性能、权限、缓存或服务端集成收益时，才重新评估。
+
+语言 IP 兜底使用独立的 `api/locale.ts` Node.js Vercel Function，所有文档仍静态构建，不需要 Astro 服务端适配器。
+
+## 三语内容维护
+
+- 简体页面保持现有路径；繁体放在 `src/content/docs/zh-hant/`，英文放在 `src/content/docs/en/`，文件相对路径和章节层级一一对应。
+- 原图、PDF、STEP 共用；在网页正文、图注和说明中提供翻译。不要复制或重命名 SKU 和下载文件。
+- 新增或修改简体事实时，同时检查两套译文。`npm run lint:i18n` 检查缺页、过期译文、章节结构、表格数值、SKU、资源链接和警告段落；`build` 前自动执行该检查。
+- 同一页面三语核对完成后，使用 `npm run i18n:record -- hardware/shim` 记录对应源版本与译文 SHA256，参数为相对路径、不带 `.mdx`。首页用 `index`。不要为了让检查通过而跳过译文审阅；初次全站导入可用 `--all`。
+- 章节保持同样的顺序与层级，语言框利用记录中的锚点映射保留阅读位置；章节改名后须检查同页卡片链接。
+- 新增 UI 文案时，在三份 `src/content/i18n/*.json` 和 `src/content.config.ts` 中同时定义。
+- `npm run test:i18n` 验证语言优先级、路径、偏好有效期、章节映射与地区接口；`npm run test:browser` 验证构建产物的三语导航、搜索与浏览器场景（先启动 `npm run preview -- --host 127.0.0.1`）。
+
+浏览器测试需要 Python 3 与 Playwright：在虚拟环境中执行 `pip install -r tests/requirements.txt`，然后将 `NICE_TEST_PYTHON` 指向该环境的 Python 可执行文件。默认使用本机 Chrome；可通过 `NICE_BROWSER_CHANNEL` 指定已安装的浏览器通道，`NICE_TEST_URL` 指定预览地址，`NICE_SCREENSHOTS` 指定截图输出目录。截图默认写入系统临时目录。
+
+### 首页自动语言规则
+
+只有会话内首次从站外进入 `/` 时自动判断。已保存的手动偏好优先，其次优先匹配浏览器列表中的明确简体标记，再按列表顺序选择繁体或英文，最后才请求 `/api/locale`。
+
+IP 兜底：CN→简体；TW/HK/MO→繁体；其他已知地区→英文；未知地区→保持简体。接口响应禁止缓存，不调用第三方 IP 服务。1.2 秒超时、请求失败或用户已操作时不再跳转。直接打开带语言前缀的首页或任何产品页均尊重 URL。
+
+手动偏好存于本机 `nice-language`，有效期 365 天；自动结果不持久化。禁用浏览器存储不影响手动切换。开代理但浏览器列表含简体的用户仍使用简体；没有中文语言信号时不推断真实所在地。
+
+地区请求头只在 Vercel 部署环境可用；`astro preview` 的地区分支由浏览器测试模拟，发布前还需在 Vercel 预览检查真实 `/api/locale`。不要将预览环境的地区检测当作覆盖所有国家的真实网络测试。
 
 ## 目录
 

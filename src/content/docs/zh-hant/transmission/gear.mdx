@@ -1,0 +1,738 @@
+---
+title: "齒輪"
+description: "齒輪可將旋轉動力從一根軸傳至另一根軸。搭配不同齒數，即可調整輸出轉速與扭力："
+icon: "gear"
+sidebar:
+  order: 10
+---
+
+
+import { BuyButton, DocImage, MathBlock, ProductTable } from '~/components/mdx';
+
+<DocImage src="/assets/docs/transmission/parameter.png" alt="齒輪尺寸與參數示意" width={375} />
+
+齒輪可將旋轉動力從一根軸傳至另一根軸。搭配不同齒數，即可調整輸出轉速與扭力：
+
+* 需要較大扭力時，以小齒輪帶動大齒輪；輸出轉速降低，扭力增加。
+* 需要較高轉速時，以大齒輪帶動小齒輪；輸出轉速提高，扭力降低。
+
+齒輪傳動特別適合以下情況：
+
+1. **軸距較近** ：需要傳動的兩根軸相距不遠。
+2. **空間有限** ：需在緊湊的機構內達到較大的減速效果。
+3. **需要反向旋轉** ：兩根軸必須往相反方向轉動。
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "名稱"
+  },
+  {
+    key: "c1",
+    label: "符號"
+  },
+  {
+    key: "c2",
+    label: "說明"
+  },
+  {
+    key: "c3",
+    label: "計算公式"
+  }
+]}
+  rows={[
+  {
+    c0: "齒數",
+    c1: "T",
+    c2: "齒輪的總齒數",
+    c3: ""
+  },
+  {
+    c0: "齒寬（Face Width）",
+    c1: "FW",
+    c2: "齒部的寬度",
+    c3: "統一為 9.5mm"
+  },
+  {
+    c0: "總寬（Overall Width）",
+    c1: "OW",
+    c2: "齒輪的整體寬度",
+    c3: "統一為 12.5mm"
+  },
+  {
+    c0: "齒頂圓直徑（Outside Diameter）",
+    c1: "OD",
+    c2: "齒頂最外緣的直徑",
+    c3: "[(T + 2) / DP] inch"
+  },
+  {
+    c0: "徑節（Diametral Pitch）",
+    c1: "DP",
+    c2: "齒數除以節圓直徑（英吋），用於表示齒輪齒形的尺寸規格",
+    c3: "T / PD"
+  },
+  {
+    c0: "節圓直徑（Pitch Diameter）",
+    c1: "PD",
+    c2: "兩個齒輪嚙合時，互相相切的理論圓直徑",
+    c3: "(T / DP) inch"
+  },
+  {
+    c0: "齒輪比（Gear Ratio）",
+    c1: "i",
+    c2: "兩個齒輪的齒數比",
+    c3: "T主動 / T從動"
+  }
+]}
+/>
+
+## 齒輪比
+
+兩個齒輪嚙合時，齒數比決定輸出的轉速與扭力。若齒數相同，理想情況下轉速與扭力也相同。
+
+### 減速：降低轉速、增加扭力
+
+<DocImage src="/assets/docs/transmission/reduction_ratio.png" alt="20 齒小齒輪帶動 60 齒大齒輪" width={375} />
+
+**適用時機：** 機構需要更大的扭力。
+
+**配置方式：** 以小齒輪（主動齒輪）帶動大齒輪（從動齒輪）。
+
+**範例：** 20 齒小齒輪帶動 60 齒大齒輪。
+
+* 主動與從動齒數比為 1:3
+* 輸出轉速為原來的 ⅓
+* 不計損耗時，輸出扭力為原來的 3 倍
+
+### 增速：提高轉速、降低扭力
+
+<DocImage src="/assets/docs/transmission/accel_ratio.png" alt="40 齒大齒輪帶動 20 齒小齒輪" width={375} />
+
+**適用時機：** 機構需要更高的最高轉速。
+
+**配置方式：** 以大齒輪（主動齒輪）帶動小齒輪（從動齒輪）。
+
+**範例：** 40 齒大齒輪帶動 20 齒小齒輪。
+
+* 主動與從動齒數比為 2:1
+* 輸出轉速為原來的 2 倍
+* 不計損耗時，輸出扭力為原來的 ½
+
+## 旋轉方向
+
+齒輪也能改變旋轉方向。
+
+<DocImage src="/assets/docs/transmission/direction.png" alt="兩個與三個齒輪的旋轉方向" width={375} />
+
+* **兩個齒輪：** 輸入與輸出方向相反，一個順時針，另一個逆時針。
+* **三個齒輪：** 輸入與輸出方向相同。
+
+## 中心距
+
+中心距是兩根齒輪軸的軸心距離，計算方式如下：
+
+<MathBlock expression={String.raw`C=\frac{D_1}{2}+\frac{D_2}{2}+a`} />
+
+其中 C 為中心距，D₁ 與 D₂ 為兩齒輪的節圓直徑，a 為中心距餘量；計算時請使用相同單位。
+
+### 中心距餘量
+
+實際安裝時，可在理論中心距上增加少量餘量（0.03mm～0.05mm），以便：
+
+* 減少齒輪磨損
+* 讓齒輪運轉更順暢
+* 但也會略微增加齒間背隙（backlash）
+
+**建議餘量：**
+
+* 緊密配合：+0.000mm（理論值，嚙合最緊密）
+* 留餘量配合：+0.03mm ～ +0.05mm（建議使用，運轉較順暢）
+
+## 固定中心距下調整齒輪比
+
+:::note
+
+在徑節相同的前提下，只要兩個齒輪的齒數總和不變，就能更換齒數組合、調整轉速與扭力，而不必移動軸心位置。
+
+:::
+
+例如：
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "主動齒輪"
+  },
+  {
+    key: "c1",
+    label: "從動齒輪"
+  },
+  {
+    key: "c2",
+    label: "齒數總和"
+  },
+  {
+    key: "c3",
+    label: "齒輪比"
+  },
+  {
+    key: "c4",
+    label: "中心距"
+  }
+]}
+  rows={[
+  {
+    c0: "20t",
+    c1: "60t",
+    c2: "80t",
+    c3: "1:3",
+    c4: "50.8mm (2\")"
+  },
+  {
+    c0: "32t",
+    c1: "48t",
+    c2: "80t",
+    c3: "1:1.5",
+    c4: "50.8mm (2\")"
+  }
+]}
+/>
+
+上面兩組齒輪的中心距同為 50.8mm，但齒輪比不同。
+
+## NICE 鋁合金齒輪
+
+<BuyButton href="https://item.taobao.com/item.htm?id=1008715504499&mi_id=0000PiXYrnKGOqLR31zYdTL_g8kbIzI5KpOxVPvvSTnKGYY&spm=a21xtw.29178619.0.0" />
+
+NICE 齒輪採用以下統一規格：
+
+* **徑節：** 20DP
+* **壓力角：** 14.5°
+* **齒寬：** 9.5mm
+
+可透過更換齒數組合調整性能；若要沿用原有軸距，須保持兩齒輪的齒數總和不變。
+
+### 實心腹板齒輪
+
+<DocImage src="/assets/docs/transmission/20dp.png" alt="NICE 實心腹板鋁合金齒輪" width={375} />
+
+* ½″ 六角孔，相容標準 ½" 六角軸與圓角六角軸
+* 7075-T6 鋁合金，黑色硬質陽極處理
+* 高強度、耐磨損
+* 齒寬 9.5mm
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "SKU"
+  },
+  {
+    key: "c1",
+    label: "重量"
+  },
+  {
+    key: "c2",
+    label: "齒數"
+  },
+  {
+    key: "c3",
+    label: "圖面",
+    type: "pdf"
+  },
+  {
+    key: "c4",
+    label: "模型",
+    type: "step"
+  },
+  {
+    key: "c5",
+    label: "Onshape",
+    type: "onshape",
+    align: "center"
+  }
+]}
+  rows={[
+  {
+    c0: "NICE-02-01-001",
+    c1: "10g",
+    c2: "20t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-01.pdf",
+      label: "NICE-D-02-01-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-001.step",
+      label: "NICE-02-01-001.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-002",
+    c1: "13g",
+    c2: "22t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-01.pdf",
+      label: "NICE-D-02-01-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-002.step",
+      label: "NICE-02-01-002.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-003",
+    c1: "16g",
+    c2: "24t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-01.pdf",
+      label: "NICE-D-02-01-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-003.step",
+      label: "NICE-02-01-003.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-004",
+    c1: "20g",
+    c2: "26t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-01.pdf",
+      label: "NICE-D-02-01-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-004.step",
+      label: "NICE-02-01-004.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-005",
+    c1: "23g",
+    c2: "28t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-01.pdf",
+      label: "NICE-D-02-01-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-005.step",
+      label: "NICE-02-01-005.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-006",
+    c1: "27g",
+    c2: "30t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-01.pdf",
+      label: "NICE-D-02-01-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-006.step",
+      label: "NICE-02-01-006.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-007",
+    c1: "31g",
+    c2: "32t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-01.pdf",
+      label: "NICE-D-02-01-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-007.step",
+      label: "NICE-02-01-007.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-008",
+    c1: "25g",
+    c2: "34t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-01.pdf",
+      label: "NICE-D-02-01-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-008.step",
+      label: "NICE-02-01-008.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-009",
+    c1: "40g",
+    c2: "36t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-01.pdf",
+      label: "NICE-D-02-01-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-009.step",
+      label: "NICE-02-01-009.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-010",
+    c1: "45g",
+    c2: "38t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-01.pdf",
+      label: "NICE-D-02-01-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-010.step",
+      label: "NICE-02-01-010.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  }
+]}
+/>
+
+### 減重凹槽齒輪
+
+<DocImage src="/assets/docs/transmission/20dp_pocketed.png" alt="NICE 減重凹槽鋁合金齒輪" width={375} />
+
+40 齒以上的大齒輪另有減重凹槽版本，可在維持強度的同時減輕重量。
+
+* ½″ 六角孔，相容標準 ½" 六角軸與圓角六角軸
+* 7075-T6 鋁合金，黑色硬質陽極處理
+* 齒寬 9.5mm
+* 減重凹槽設計，最薄處腹板厚度為 2.5mm
+* 兼顧輕量與可靠強度
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "SKU"
+  },
+  {
+    key: "c1",
+    label: "重量"
+  },
+  {
+    key: "c2",
+    label: "齒數"
+  },
+  {
+    key: "c3",
+    label: "圖面",
+    type: "pdf"
+  },
+  {
+    key: "c4",
+    label: "模型",
+    type: "step"
+  },
+  {
+    key: "c5",
+    label: "Onshape",
+    type: "onshape",
+    align: "center"
+  }
+]}
+  rows={[
+  {
+    c0: "NICE-02-01-011",
+    c1: "27g",
+    c2: "40t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-011.step",
+      label: "NICE-02-01-011.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-012",
+    c1: "32g",
+    c2: "42t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-012.step",
+      label: "NICE-02-01-012.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-013",
+    c1: "34g",
+    c2: "44t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-013.step",
+      label: "NICE-02-01-013.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-014",
+    c1: "36g",
+    c2: "46t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-014.step",
+      label: "NICE-02-01-014.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-015",
+    c1: "41g",
+    c2: "48t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-015.step",
+      label: "NICE-02-01-015.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-016",
+    c1: "41g",
+    c2: "50t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-016.step",
+      label: "NICE-02-01-016.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-017",
+    c1: "44g",
+    c2: "52t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-017.step",
+      label: "NICE-02-01-017.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-018",
+    c1: "45g",
+    c2: "54t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-018.step",
+      label: "NICE-02-01-018.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-019",
+    c1: "49g",
+    c2: "56t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-019.step",
+      label: "NICE-02-01-019.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-020",
+    c1: "51g",
+    c2: "58t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-020.step",
+      label: "NICE-02-01-020.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-021",
+    c1: "51g",
+    c2: "60t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-021.step",
+      label: "NICE-02-01-021.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-022",
+    c1: "57g",
+    c2: "62t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-022.step",
+      label: "NICE-02-01-022.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-023",
+    c1: "60g",
+    c2: "64t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-023.step",
+      label: "NICE-02-01-023.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-024",
+    c1: "63g",
+    c2: "66t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-024.step",
+      label: "NICE-02-01-024.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-025",
+    c1: "69g",
+    c2: "68t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-025.step",
+      label: "NICE-02-01-025.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-026",
+    c1: "69g",
+    c2: "70t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-026.step",
+      label: "NICE-02-01-026.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-027",
+    c1: "72g",
+    c2: "72t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-027.step",
+      label: "NICE-02-01-027.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  }
+]}
+/>

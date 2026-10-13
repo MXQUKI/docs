@@ -42,6 +42,8 @@
 ## 内容维护规则
 
 - `src/content/docs` 是唯一文档事实源。
+- 网站三语内容：简体原路径、繁体 `zh-hant/`、英文 `en/`。改动产品事实时同步审阅两套译文，遵循 `agent-logs/I18N-GLOSSARY.md` 的术语；保留数字、SKU、资源链接和警告内容。
+- 新增或改动章节后保持三语层级和顺序对应；完成审阅再用 `npm run i18n:record -- <页面相对路径，不含扩展名>` 更新翻译记录，不得直接刷新记录掩盖过期译文。
 - 新增页面只新增 `.mdx` 和所需静态资源。
 - 图片放到 `public/assets/docs/<section>/<page>/`。
 - PDF、STEP 等下载资源放到 `public/downloads/<section>/<page>/`。
@@ -114,6 +116,8 @@ sidebar:
 
 ```powershell
 npm run lint:content
+npm run lint:i18n
+npm run test:i18n
 npm run check
 npm run build
 ```

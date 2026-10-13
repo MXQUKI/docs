@@ -21,12 +21,15 @@ export default defineConfig({
 		starlight({
 			title: 'NICE Robotics',
 			description: 'NICE Robotics 官方产品文档',
+			defaultLocale: 'root',
 			favicon: '/favicon.png',
 			locales: {
 				root: {
 					label: '简体中文',
 					lang: 'zh-CN',
 				},
+				'zh-hant': { label: '繁體中文', lang: 'zh-Hant' },
+				en: { label: 'English', lang: 'en' },
 			},
 			logo: {
 				src: './src/assets/logos/nice-text.svg',
@@ -46,6 +49,7 @@ export default defineConfig({
 			customCss: ['./src/styles/global.css'],
 			routeMiddleware: './src/starlightRouteData.ts',
 			components: {
+				ThemeProvider: './src/components/NiceThemeProvider.astro',
 				Header: './src/components/NiceHeader.astro',
 				Footer: './src/components/NiceFooter.astro',
 				PageTitle: './src/components/NicePageTitle.astro',
@@ -56,11 +60,11 @@ export default defineConfig({
 				MobileMenuFooter: './src/components/NiceMobileMenuFooter.astro',
 			},
 			sidebar: [
-				{ label: '首页', slug: '' },
-				{ label: '传动', items: [{ autogenerate: { directory: 'transmission' } }] },
-				{ label: '硬件', items: [{ autogenerate: { directory: 'hardware' } }] },
-				{ label: '结构', items: [{ autogenerate: { directory: 'structure' } }] },
-				{ label: '轮子', items: [{ autogenerate: { directory: 'wheels' } }] },
+				{ label: '首页', translations: { 'zh-Hant': '首頁', en: 'Home' }, slug: '' },
+				{ label: '传动', translations: { 'zh-Hant': '傳動', en: 'Power Transmission' }, items: [{ autogenerate: { directory: 'transmission' } }] },
+				{ label: '硬件', translations: { 'zh-Hant': '零組件', en: 'Hardware' }, items: [{ autogenerate: { directory: 'hardware' } }] },
+				{ label: '结构', translations: { 'zh-Hant': '結構', en: 'Structure' }, items: [{ autogenerate: { directory: 'structure' } }] },
+				{ label: '轮子', translations: { 'zh-Hant': '輪組', en: 'Wheels & Rollers' }, items: [{ autogenerate: { directory: 'wheels' } }] },
 			],
 		}),
 	],

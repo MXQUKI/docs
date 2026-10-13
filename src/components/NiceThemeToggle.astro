@@ -3,7 +3,7 @@ import NiceIcon from './NiceIcon.astro';
 ---
 
 <nice-theme-toggle>
-	<button type="button" aria-label="切换主题" title="切换主题">
+	<button type="button" aria-label={Astro.locals.t('themeSelect.accessibleLabel')} title={Astro.locals.t('themeSelect.accessibleLabel')}>
 		<NiceIcon name="bulb" size="1.45rem" strokeWidth="2.25" />
 	</button>
 </nice-theme-toggle>
@@ -20,7 +20,7 @@ import NiceIcon from './NiceIcon.astro';
 
 	function setTheme(theme: Theme) {
 		document.documentElement.dataset.theme = theme;
-		localStorage.setItem(storageKey, theme);
+		try { localStorage.setItem(storageKey, theme); } catch { /* Private browsing may disable storage. */ }
 	}
 
 	class NiceThemeToggle extends HTMLElement {

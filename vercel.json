@@ -7,7 +7,7 @@
     },
     {
       "source": "/hardware",
-      "destination": "/hardware/tube_plugs/",
+      "destination": "/hardware/tube-plugs/",
       "permanent": false
     },
     {

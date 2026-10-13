@@ -90,7 +90,7 @@ function alignClass(align?: Align) {
 									]}
 								>
 									{type === 'buy' ? (
-										<BuyButton href={value.href} label={value.label ?? '购买'} />
+										<BuyButton href={value.href} label={value.label} />
 									) : type === 'onshape' ? (
 										<OnshapeLink href={value.href ?? String(value.value ?? '')} />
 									) : type === 'pdf' || type === 'step' || type === 'link' ? (

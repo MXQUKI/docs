@@ -74,6 +74,10 @@
 	}
 }
 
+@media (max-width: 40rem) {
+	:root { --sl-nav-height: 8.75rem; }
+}
+
 @layer starlight {
 	html,
 	body,

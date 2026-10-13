@@ -5,7 +5,7 @@ interface Props {
 	title?: string;
 }
 
-const { href, label = '购买', title = label } = Astro.props;
+const { href, label = Astro.locals.t('nice.buy'), title = label } = Astro.props;
 const classes =
 	'nice-buy-button not-content inline-flex size-9 shrink-0 items-center justify-center whitespace-nowrap rounded-lg border border-[#fc5000] bg-[#fc5000] align-middle text-white no-underline transition-colors duration-200 hover:border-[#c93e00] hover:bg-[#c93e00] hover:text-white';
 ---

@@ -12,5 +12,19 @@ export const collections = {
 			}),
 		}),
 	}),
-	i18n: defineCollection({ loader: i18nLoader(), schema: i18nSchema() }),
+	i18n: defineCollection({
+		loader: i18nLoader(),
+		schema: i18nSchema({ extend: z.object({
+			'nice.home': z.string(),
+			'nice.transmission': z.string(),
+			'nice.hardware': z.string(),
+			'nice.structure': z.string(),
+			'nice.wheels': z.string(),
+			'nice.shop': z.string(),
+			'nice.onshape': z.string(),
+			'nice.categories': z.string(),
+			'nice.contact': z.string(),
+			'nice.buy': z.string(),
+		}) }),
+	}),
 };
