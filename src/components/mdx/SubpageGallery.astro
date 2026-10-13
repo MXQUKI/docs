@@ -1,4 +1,5 @@
 ---
+import { localizedPath, splitPath } from '../../i18n/locales';
 interface SubpageItem {
 	href: string;
 	title: string;
@@ -14,6 +15,9 @@ interface Props {
 }
 
 const { items } = Astro.props;
+const { locale } = splitPath(Astro.url.pathname);
+const pageHref = (href: string) => href.startsWith('/') && !href.startsWith('//')
+  ? localizedPath(href, locale) : href;
 ---
 
 <div class="not-content mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -21,7 +25,7 @@ const { items } = Astro.props;
 		items.map((item) => (
 			<a
 				class="group flex min-w-0 flex-col overflow-hidden rounded-lg border border-[#e1d6d3]/70 bg-[var(--nice-content-bg)] text-[var(--sl-color-text)] no-underline shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-colors duration-200 hover:border-[#fc5000] hover:no-underline [html[data-theme='dark']_&]:border-white/15"
-				href={item.href}
+				href={pageHref(item.href)}
 			>
 				{item.image && (
 					<img

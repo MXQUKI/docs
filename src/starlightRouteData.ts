@@ -1,5 +1,6 @@
 import { defineRouteMiddleware, type StarlightRouteData } from '@astrojs/starlight/route-data';
 import { getCollection } from 'astro:content';
+import { splitPath, prefixes } from './i18n/locales';
 
 const sectionPrefixes = ['transmission', 'hardware', 'structure', 'wheels'] as const;
 let iconByHref: Map<string, string> | undefined;
@@ -45,19 +46,21 @@ function addSidebarIcons(entries: StarlightRouteData['sidebar'], icons: Map<stri
 }
 
 function filterSidebar(route: StarlightRouteData) {
-	if (route.id === '') {
+	const { locale, path } = splitPath(`/${route.id}`);
+	const id = path.replace(/^\//, '');
+	if (id === '') {
 		route.hasSidebar = false;
 		route.toc = undefined;
 		route.sidebar = [];
 		return;
 	}
 
-	const section = getCurrentSection(route.id);
+	const section = getCurrentSection(id);
 	if (!section) return;
 
 	const sectionGroup = route.sidebar.find((entry) => {
 		if (!isSidebarGroup(entry)) return false;
-		return entry.entries.some((child) => child.type === 'link' && child.href.startsWith(`/${section}/`));
+		return entry.entries.some((child) => child.type === 'link' && child.href.startsWith(`${prefixes[locale]}/${section}/`));
 	});
 
 	if (isSidebarGroup(sectionGroup)) {

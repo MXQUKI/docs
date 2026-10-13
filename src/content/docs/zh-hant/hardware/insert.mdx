@@ -1,0 +1,100 @@
+---
+title: "3D 列印嵌入件"
+description: "越來越多隊伍使用 3D 列印製作皮帶輪、齒輪等傳動零件，但列印件仍有一些限制："
+icon: "seal"
+sidebar:
+  order: 40
+---
+
+
+import { BuyButton, DocImage, OnshapeLink, ProductTable } from '~/components/mdx';
+
+越來越多隊伍使用 3D 列印製作皮帶輪、齒輪等傳動零件，但列印件仍有一些限制：
+
+* 可承受的扭力有限
+* 應力集中處容易變形
+* 尺寸精度不易控制
+
+NICE 3D 列印嵌入件採用 6061-T6 鋁合金，重量僅 3.4g，可補強列印件的軸孔介面，改善應力集中的問題。
+
+## 使用方式
+
+#### 將嵌入件裝入皮帶輪
+
+<DocImage src="/assets/docs/hardware/Insert_wPulley.png" alt="嵌入件與列印皮帶輪的組合" width={375} />
+
+搭配嵌入件可減少應力集中造成的裂損與變形，也能大幅降低皮帶輪所需的填充率。
+
+## NICE 皮帶輪產生器
+
+<OnshapeLink href="https://cad.onshape.com/documents/7f060273e4bab729adead569/w/19d349784e7c91c00cdea39d/e/28ab6289faa784aaacb61227?configuration=Belt_Width%3D0.011%2Bmeter%3BBreaing_T%3D0.00553%2Bmeter%3BList_gjj2ZuSKOEpUZB%3DDefault%3BList_sAlfs7a70W4yCe%3DDead_Axle%3BPocket%3Dtrue%3BTeeth%3D36.0%3B____%3Dfalse%3Bbearing_OD%3D0.0247%2Bmeter&renderMode=0&uiState=696ba1bdfadd99dd2d4a66b1" />
+
+<DocImage src="/assets/docs/hardware/%E6%88%AA%E5%B1%8F2026-01-17%2022.57.42.png" alt="NICE 皮帶輪產生器設定畫面" />
+
+* 支援 HTD 5mm/3mm 齒形
+* 可調整齒寬與齒數
+* 可一鍵加入減重凹槽
+* 另提供嵌入件與固定軸（dead shaft）安裝模式
+
+:::caution
+
+列印成品的尺寸會受到機台、材料及列印設定影響。NICE 皮帶輪產生器的預設值僅供參考；大量列印前，請先調整配合公差等參數並確認實際配合情況。
+
+:::
+
+## NICE 1/2'' 軸用列印嵌入件
+
+<BuyButton href="https://item.taobao.com/item.htm?id=1012638862342&mi_id=0000iTMzGn9Bda-E2gozCIBJMOiTfyOC428w1lgRQPEArEo&spm=a21xtw.29178619.0.0&xxc=shop&skuId=6015704508382" />
+
+<DocImage src="/assets/docs/hardware/insert.png" alt="NICE 鋁合金列印嵌入件" width={375} />
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "SKU"
+  },
+  {
+    key: "c1",
+    label: "重量"
+  },
+  {
+    key: "c2",
+    label: "適用六角軸"
+  },
+  {
+    key: "c3",
+    label: "圖面",
+    type: "pdf"
+  },
+  {
+    key: "c4",
+    label: "模型",
+    type: "step"
+  },
+  {
+    key: "c5",
+    label: "Onshape",
+    type: "onshape",
+    align: "center"
+  }
+]}
+  rows={[
+  {
+    c0: "NICE-04-03-001",
+    c1: "3.4g",
+    c2: "1/2inch",
+    c3: {
+      href: "/assets/docs/hardware/NICE-D-04-03-01.pdf",
+      label: "NICE-D-04-03-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/hardware/NICE-04-03-001.step",
+      label: "NICE-04-03-001.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/f6b4f6cbeb32953ba733ca8b"
+    }
+  }
+]}
+/>

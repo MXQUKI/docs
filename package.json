@@ -11,7 +11,12 @@
     "lint:content": "node scripts/lint-content.mjs",
     "check": "astro check",
     "sync:astro": "astro sync",
-    "astro": "astro"
+    "astro": "astro",
+    "lint:i18n": "node scripts/i18n-content.mjs",
+    "i18n:record": "node scripts/i18n-content.mjs --record",
+    "test:i18n": "node --experimental-strip-types --test tests/locale.test.mjs",
+    "prebuild": "npm run lint:i18n",
+    "test:browser": "node scripts/test-browser.mjs"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.39.3",
@@ -26,6 +31,8 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@types/node": "^25.9.2",
+    "acorn": "^8.17.0",
+    "github-slugger": "^2.0.0",
     "playwright": "^1.60.0",
     "typescript": "^6.0.3"
   }

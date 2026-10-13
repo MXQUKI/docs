@@ -1,0 +1,90 @@
+---
+title: "板材"
+description: "SRPP 自增強聚丙烯板由聚丙烯纖維與聚丙烯基材複合而成，兼具輕量與高韌性。"
+icon: "square-full"
+sidebar:
+  order: 20
+---
+
+import { BuyButton, DocImage, ProductTable } from '~/components/mdx';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## SRPP 複合板
+
+<BuyButton href="https://item.taobao.com/item.htm?id=1057526045542&mi_id=0000WHd6w7g9oSXcgD_fbYqh6fyMIQfaAyainaVxjsvMmdY&spm=a21xtw.29178619.0.0&xxc=shop&skuId=6099576289269" />
+
+<DocImage src="/assets/docs/structure/ban-cai.png" alt="SRPP 複合板" variant="wide" />
+
+**SRPP 自增強聚丙烯** 板由聚丙烯纖維與聚丙烯基材複合而成，兼具輕量與高韌性。纖維與基材同屬聚丙烯，結合性佳，具有良好的耐衝擊、耐彎折與吸收能量能力。
+
+相較於碳纖維板，SRPP 更重視柔韌性、延展性與受衝擊後的完整性，受力時較不易分層或脆裂。相較於 PC 板，SRPP 的剛性與強度較高、密度較低，也能透過彎曲與延展吸收衝擊。
+
+在 FRC 機器人上，SRPP 適合用於取物機構（intake）、護板及緩衝板等經常承受碰撞、擠壓或彎曲的零件。
+
+:::note
+
+複合壓製製程可能造成板厚輕微變動，典型偏差約為 ±0.2mm。若用於精密裝配或對間隙敏感的結構，建議收貨後先量測，再依實際厚度調整設計。
+
+SRPP 是具有柔韌性與可變形能力的聚丙烯基熱塑性板材。長期存放時請水平平放並完整支撐，避免斜靠、局部懸空或長時間受壓彎曲，以免翹曲或產生永久變形。
+
+:::
+
+### 加工方式
+
+**參考加工參數**
+
+<Tabs>
+
+<TabItem label="雷射切割">
+
+<ProductTable
+  columns={[
+    { key: "c0", label: "雷射規格" },
+    { key: "c1", label: "最大功率" },
+    { key: "c2", label: "最小功率" },
+    { key: "c3", label: "速度" },
+    { key: "c4", label: "切割次數" }
+  ]}
+  rows={[
+    { c0: "80W", c1: "95%", c2: "90%", c3: "15mm/s", c4: "3 次" }
+  ]}
+/>
+
+</TabItem>
+
+<TabItem label="CNC 銑削">
+
+適用刀具：D4 單刃銑刀
+
+<ProductTable
+  columns={[
+    { key: "c0", label: "主軸轉速" },
+    { key: "c1", label: "切削進給率" }
+  ]}
+  rows={[
+    { c0: "24000 rpm", c1: "4000 mm/min" }
+  ]}
+/>
+
+</TabItem>
+
+</Tabs>
+
+:::danger
+
+SRPP 是聚丙烯基熱塑性複合材料。高溫雷射加工可能產生煙霧、揮發性有機物及刺激性氣體，吸入後可能引起暈眩、噁心或喉嚨不適。切割或熱加工時，務必保持充分通風並使用有效的排煙／過濾設備，避免人員直接接觸或吸入煙霧。
+
+:::
+
+### SRPP 複合板
+
+<ProductTable
+  columns={[
+    { key: "sku", label: "SKU" },
+    { key: "size", label: "尺寸" },
+    { key: "thickness", label: "厚度" }
+  ]}
+  rows={[
+    { sku: "NICE-06-02-001", size: "900mm*600mm", thickness: "6mm" }
+  ]}
+/>

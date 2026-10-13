@@ -1,0 +1,464 @@
+---
+title: "Sprockets & Chain"
+description: "Learn how to size and tension chain drives, then browse NICE sprockets, chain, master links, and chain tensioners."
+icon: "link"
+sidebar:
+  order: 20
+---
+
+
+import { BuyButton, DocImage, ProductTable } from '~/components/mdx';
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<DocImage src="/assets/docs/transmission/parameter%20%281%29.png" alt="Sprocket and chain dimensions" width={375} />
+
+## Key Dimensions
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "Name"
+  },
+  {
+    key: "c1",
+    label: "Description"
+  }
+]}
+  rows={[
+  {
+    c0: "Pitch",
+    c1: "Distance between adjacent chain pin centers; determines the chain size"
+  },
+  {
+    c0: "Pitch diameter",
+    c1: "Diameter of the theoretical circle through the chain pin centers as the chain wraps around the sprocket"
+  },
+  {
+    c0: "Outside diameter",
+    c1: "Diameter measured over the sprocket tooth tips"
+  },
+  {
+    c0: "Chain clearance diameter",
+    c1: "Maximum outside envelope with the chain fitted; allow this space in your design"
+  }
+]}
+/>
+
+## Center Distance
+
+:::note
+
+Because links can be added or removed, you can design a chain drive in this order:
+
+1. Set the sprocket center distance to suit the robot layout.
+2. Adjust the chain length for that distance.
+3. Set the tension so the chain runs correctly on the sprockets.
+
+:::
+
+:::caution
+
+* Avoid too little center distance: the sprockets may interfere with each other.
+* Avoid excessive center distance: it can make chain tension difficult to control.
+
+:::
+
+## Chain Tension
+
+A chain drive needs the right amount of tension to operate reliably.
+
+### Why Does Tension Matter?
+
+**Too loose:**
+
+* The chain may skip teeth or come off the sprocket
+* Wear increases
+* Lost motion delays the mechanism's response
+
+**Too tight:**
+
+* Excessive loading on the chain, bearings, and shafts
+* More friction consumes motor power
+* Shorter component life
+
+**Correctly tensioned:**
+
+* Smooth, reliable power transmission
+* Lower wear
+* Better efficiency
+
+<DocImage src="/assets/docs/transmission/tension.png" alt="Examples of chain tension" width={375} />
+
+#### Ways to Adjust Tension
+
+<Tabs>
+
+<TabItem label="Adjust chain length">
+
+Use a chain breaker and a master link to add or remove links.
+
+**Use this when:** the chain is clearly too loose or too tight.
+
+</TabItem>
+
+<TabItem label="Adjust center distance">
+
+Move a sprocket to change the distance between the two shaft centers.
+
+**Use this when:** laying out the mechanism, or when the mounting arrangement allows adjustment.
+
+**Tradeoff:** the mounting structure may need to be redesigned.
+
+</TabItem>
+
+<TabItem label="Tensioner (open-ended chain)">
+
+<DocImage src="/assets/docs/transmission/tensioner_usage.png" alt="Tensioner in an open-ended chain assembly" width={375} />
+
+* For chain arrangements that do not circulate in a complete loop
+* Turn the center body to tension the chain
+
+</TabItem>
+
+<TabItem label="Idler sprocket (continuous loop)">
+
+<DocImage src="/assets/docs/transmission/idle_gear.png" alt="Idler sprocket tensioning a continuous chain loop" width={375} />
+
+* Add a small sprocket along the chain path
+* Position it inside or outside the loop
+* Increase sprocket engagement for more stable operation
+
+:::note
+
+An idler adjusts tension without changing the drive ratio.
+
+:::
+
+</TabItem>
+
+</Tabs>
+
+## NICE Sprockets
+
+<BuyButton href="https://item.taobao.com/item.htm?id=1008703824374&mi_id=0000Iucv4yNyFMeLl09NvXO1ylTUk43X_IbMUl2EOezrC3s&spm=a21xtw.29178619.0.0" />
+
+<DocImage src="/assets/docs/transmission/nice_sprocket.png" alt="NICE aluminum sprocket" width={375} />
+
+* ½″ hex bore, compatible with standard ½" hex and rounded-hex shafts
+* 7075-T6 aluminum alloy with black anodizing
+* Alignment marks help you set both sprockets to the same angular position
+
+### #25
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "SKU"
+  },
+  {
+    key: "c1",
+    label: "Weight"
+  },
+  {
+    key: "c2",
+    label: "Tooth count"
+  },
+  {
+    key: "c3",
+    label: "Drawing",
+    type: "pdf"
+  },
+  {
+    key: "c4",
+    label: "CAD model",
+    type: "step"
+  },
+  {
+    key: "c5",
+    label: "Onshape",
+    type: "onshape",
+    align: "center"
+  }
+]}
+  rows={[
+  {
+    c0: "NICE-02-02-001",
+    c1: "10g",
+    c2: "18t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-02-01%20%281%29.pdf",
+      label: "NICE-D-02-02-01 (1).pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-02-001%20%281%29.step",
+      label: "NICE-02-02-001 (1).step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/ec81485171e6164bf598792c"
+    }
+  },
+  {
+    c0: "NICE-02-02-002",
+    c1: "14g",
+    c2: "22t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-02-01%20%281%29.pdf",
+      label: "NICE-D-02-02-01 (1).pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-02-002%20%281%29.step",
+      label: "NICE-02-02-002 (1).step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/ec81485171e6164bf598792c"
+    }
+  }
+]}
+/>
+
+### #35
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "SKU"
+  },
+  {
+    key: "c1",
+    label: "Weight"
+  },
+  {
+    key: "c2",
+    label: "Tooth count"
+  },
+  {
+    key: "c3",
+    label: "Drawing",
+    type: "pdf"
+  },
+  {
+    key: "c4",
+    label: "CAD model",
+    type: "step"
+  },
+  {
+    key: "c5",
+    label: "Onshape",
+    type: "onshape",
+    align: "center"
+  }
+]}
+  rows={[
+  {
+    c0: "NICE-02-02-003",
+    c1: "20g",
+    c2: "15t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-02-02.pdf",
+      label: "NICE-D-02-02-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-02-003%20%282%29.step",
+      label: "NICE-02-02-003 (2).step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/ec81485171e6164bf598792c"
+    }
+  }
+]}
+/>
+
+## NICE Chain
+
+* Sizes: #25 / #25H / #35
+* Length: 10ft (approximately 3m)
+* Material: high-strength chain steel
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "Buy on Taobao",
+    type: "buy",
+    align: "center"
+  },
+  {
+    key: "c1",
+    label: "SKU"
+  },
+  {
+    key: "c2",
+    label: "Weight"
+  },
+  {
+    key: "c3",
+    label: "Size"
+  },
+  {
+    key: "c4",
+    label: "Length (ft)"
+  }
+]}
+  rows={[
+  {
+    c0: {
+      href: "https://item.taobao.com/item.htm?id=1006532103368&mi_id=00005cHRAAB_ykw5E0XdtquQIAONLPIPn_CrOPn183Rqtzg&spm=a21xtw.29178619.0.0",
+      label: "Buy on Taobao"
+    },
+    c1: "NICE-02-02-005",
+    c2: "455g",
+    c3: "#25",
+    c4: "10"
+  },
+  {
+    c0: {
+      href: "https://item.taobao.com/item.htm?id=1006532103368&mi_id=00005cHRAAB_ykw5E0XdtquQIAONLPIPn_CrOPn183Rqtzg&spm=a21xtw.29178619.0.0",
+      label: "Buy on Taobao"
+    },
+    c1: "NICE-02-02-004",
+    c2: "531g",
+    c3: "#25H",
+    c4: "10"
+  },
+  {
+    c0: {
+      href: "https://item.taobao.com/item.htm?id=1010052110010&mi_id=0000JctZwzt1cQh3yJmS7lAkYJrL-kE4TwBfAA6Mt7xcfhs&spm=a21xtw.29178619.0.0&skuId=6011153336239",
+      label: "Buy on Taobao"
+    },
+    c1: "NICE-02-02-006",
+    c2: "1049g",
+    c3: "#35",
+    c4: "10"
+  }
+]}
+/>
+
+## NICE Master Links
+
+<BuyButton href="https://item.taobao.com/item.htm?id=1007980749424&mi_id=0000eS82sUgIu8kZVW6YTe04SSr5pf9xfAquYVKRcNCq2Xk&spm=a21xtw.29178619.0.0" />
+
+* Sizes: #25 / #25H / #35
+* Quantity: 5 per pack
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "SKU"
+  },
+  {
+    key: "c1",
+    label: "Weight"
+  },
+  {
+    key: "c2",
+    label: "Size"
+  }
+]}
+  rows={[
+  {
+    c0: "NICE-02-02-007",
+    c1: "1g",
+    c2: "#25"
+  },
+  {
+    c0: "NICE-02-02-008",
+    c1: "1g",
+    c2: "#25H"
+  },
+  {
+    c0: "NICE-02-02-009",
+    c1: "4g",
+    c2: "#35"
+  }
+]}
+/>
+
+## NICE Chain Tensioners
+
+<BuyButton href="https://item.taobao.com/item.htm?id=1007154306593&mi_id=0000os9LBqznREtiA5NSsLmaF1jkBytMTOSSjCu5g10xdpM&spm=a21xtw.29178619.0.0" />
+
+<DocImage src="/assets/docs/transmission/tensioner.png" alt="NICE chain tensioner" width={375} />
+
+Installation:
+
+1. Unscrew both attachment bolts from the center body.
+2. Use a chain breaker to attach a bolt to each chain end.
+3. Align both bolts with the threaded ends of the center body.
+4. Turn the center body to tension the chain.
+
+:::danger
+
+Use this tensioner only where the chain does not circulate in a complete loop. If the tensioner reaches a sprocket, it will damage the sprocket!
+
+:::
+
+* Sizes: #25 / #25H / #35
+* Center body accepts M6 bolts for a secure connection
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "SKU"
+  },
+  {
+    key: "c1",
+    label: "Weight"
+  },
+  {
+    key: "c2",
+    label: "Size"
+  },
+  {
+    key: "c3",
+    label: "Drawing",
+    type: "pdf"
+  },
+  {
+    key: "c4",
+    label: "CAD model",
+    type: "step"
+  },
+  {
+    key: "c5",
+    label: "Onshape",
+    type: "onshape",
+    align: "center"
+  }
+]}
+  rows={[
+  {
+    c0: "NICE-02-02-010",
+    c1: "16g",
+    c2: "#25/#25H",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-02-03.pdf",
+      label: "NICE-D-02-02-03.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-02-010.step",
+      label: "NICE-02-02-010.step"
+    },
+    c5: null
+  },
+  {
+    c0: "NICE-02-02-011",
+    c1: "",
+    c2: "#35",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-02-03.pdf",
+      label: "NICE-D-02-02-03.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-02-011.step",
+      label: "NICE-02-02-011.step"
+    },
+    c5: null
+  }
+]}
+/>

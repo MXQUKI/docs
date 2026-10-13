@@ -1,13 +1,35 @@
 # Handoff
 
-更新时间：2026-10-09 11:37:16 +08:00
+更新时间：2026-10-13 15:00:40 +0800
+
+## 三语产品文档（本地验收完成，准备预览）
+
+- 分支 `codex/three-language-docs`；简体原路径保留，新增 `/zh-hant/`、`/en/`，16 个源页面对应 32 篇完整译文，共 48 个内容页面。
+- 语言框使用文字与翻译图标，无旗帜；切换保留产品、查询参数和对应章节。导航、侧栏、按钮、搜索和元信息已本地化。
+- 仅首次从站外进入 `/` 自动选择：手动偏好（365 天）→浏览器任意明确简体标记→浏览器支持语言排序→IP 兜底。产品直达页与语言前缀首页不跳转。
+- 新增独立 Node.js `GET /api/locale`，只读取 Vercel 地区头、只返回语言、禁止缓存；超时 1.2 秒或用户已操作不跳转。全站仍静态输出。
+- `agent-logs/I18N-GLOSSARY.md` 包含三语术语、来源与待斟酌商品名。图片和下载文件共用；SKU、数值、外部资源和警告逐项比对。
+- 补正原简体齿轮页的径节定义，与同表 `T / PD` 公式一致，并补明同径节/同总齿数是保持轴距的条件。产品规格未改动。
+- 翻译版本 SHA256 与章节映射记录在 `src/i18n/translation-status.json`；构建前强制检查缺译、过期译文、数值及链接。更新事实须同步审阅两套译文后使用 `i18n:record`。
+- 已通过：content lint、i18n lint、7 项语言/API 单测、Astro check（0 errors/warnings/hints）、build（48 个内容页面 + 404，三套各 16 页的 Pagefind 索引）。
+- Python Playwright 验证通过：全部 48 页静态链接/资源/锚点/SEO 审计；首页语言与故障场景；三语 × 桌面/手机 × 浅色/深色 × 6 页 = 72 组页面检查，菜单、同页切换、查询参数与三语搜索。浏览器存储被拒时仍能切换；主题初始化也容错。
+- 本机预览 `http://127.0.0.1:4321/`；浏览器测试使用临时 Python venv，运行说明已写入 README。
+- 已核对部署目标为 NI Corporate / docs (`prj_Y5hrSGAEBBI9098IzW2wcVKNsgwD`)，生产域名 `docs.nicerobotics.hk`，Node 24；远端 main 仍为 `91f4289`。尚待远端预览验证地区接口，再完成发布核验。
+- 保留原有未提交交接内容。下方为之前的交接记录。
+
+---
+
+# Handoff
+
+更新时间：2026-10-09 11:38:54 +08:00
 
 ## 本轮 SKU 更正
 
 - 将滚轴系统页面“硅胶防滑胶带”（50mm × 3m）的 SKU 从 `NICE-07-05-002` 更正为 `NICE-07-05-007`。
 - 其他滚筒产品的 `NICE-07-05-002` 引用保持不变。
 - `npm run lint:content`、`npm run check`、`npm run build` 均通过；构建 HTML 中已核对胶带 SKU 和尺寸。
-- 本轮仅修改本地源码，尚未提交、推送或部署；已有 Markdown 弃用及 404 构建提示仍存在。
+- 已提交并推送 `91f4289` 到 `main`；NI Corporate / docs 生产部署 `dpl_8BAVpsVG1GJXdyMHB7Pst45L3cdQ` 状态为 READY。
+- 已读取生产页面 `https://docs.nicerobotics.hk/wheels/roller-system/`，确认表格为 `NICE-07-05-007 / 50mm / 3m`。已有 Markdown 弃用及 404 构建提示仍存在。
 
 ## 当前状态
 

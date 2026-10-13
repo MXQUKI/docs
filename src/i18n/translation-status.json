@@ -1,0 +1,464 @@
+{
+  "hardware/adapter": {
+    "sourceHash": "264971383518c898916ad1891d13ebf50f70b039ec250650a78cddc380f887df",
+    "translationHashes": {
+      "zh-Hant": "18bea90b0e85818d81b2f3ea76bf96a58b4bb965c98e4a92e6a81c62d585aa5c",
+      "en": "40f5e9bff17ba5efeae4c5c99d5fd9dcd9948e81283d6ea4d9bcbdfc11700185"
+    },
+    "anchors": {
+      "zh-CN": [
+        "splinexs-转换套"
+      ],
+      "zh-Hant": [
+        "splinexs-轉接套"
+      ],
+      "en": [
+        "splinexs-adapter"
+      ]
+    }
+  },
+  "hardware/bearing-shaft": {
+    "sourceHash": "aec80945b7f860020506a5962ce127bd45cdfc621f75f2f6fdcb2f35c22448c3",
+    "translationHashes": {
+      "zh-Hant": "2a7eee516f990193939bc37f9c7b952ba2d1854ea12050be6edcc6f8d1ea5036",
+      "en": "bd14c723cd868610ab58cfb8224af5d788e2a34479739ec720a346e339153faa"
+    },
+    "anchors": {
+      "zh-CN": [
+        "nice-法兰轴承",
+        "nice-圆六角轴"
+      ],
+      "zh-Hant": [
+        "nice-法蘭軸承",
+        "nice-圓角六角軸"
+      ],
+      "en": [
+        "nice-flanged-bearings",
+        "nice-rounded-hex-shafts"
+      ]
+    }
+  },
+  "hardware/insert": {
+    "sourceHash": "551e47e0b8898ed1e614ef2d5605f33647b5b7e2bb9ed37c25788eb42e0d6f51",
+    "translationHashes": {
+      "zh-Hant": "f9235f5a3419b6e07e07d6b7dee9206df07991f0de55da5eabba904502c45aab",
+      "en": "15a1806bb3f89ed4aecc83c5317a49e09b09b3ac2b0dffb3ccebe807f69c21b2"
+    },
+    "anchors": {
+      "zh-CN": [
+        "如何使用",
+        "皮带轮嵌入",
+        "nice皮带轮生成器",
+        "nice-12轴用打印嵌入件"
+      ],
+      "zh-Hant": [
+        "使用方式",
+        "將嵌入件裝入皮帶輪",
+        "nice-皮帶輪產生器",
+        "nice-12-軸用列印嵌入件"
+      ],
+      "en": [
+        "how-to-use",
+        "installing-an-insert-in-a-pulley",
+        "nice-pulley-generator",
+        "nice-printing-inserts-for-12-shafts"
+      ]
+    }
+  },
+  "hardware/nut-strips": {
+    "sourceHash": "f009c287fbfd487ed00a50155839dfe9cd9963c8751dbc65ec087bb2e462600c",
+    "translationHashes": {
+      "zh-Hant": "9a40c22e29a51eb80aac3c3c18dfc064a1f12c406ba1a97ea772e5eee47e53cf",
+      "en": "3d279861346cdff96ad18a216d36c1e3907a322c1b4b9ce7bf81f93e3c06f3c5"
+    },
+    "anchors": {
+      "zh-CN": [
+        "如何使用",
+        "nice-螺母条"
+      ],
+      "zh-Hant": [
+        "使用方式",
+        "nice-螺帽條"
+      ],
+      "en": [
+        "how-to-use",
+        "nice-nut-strips"
+      ]
+    }
+  },
+  "hardware/shim": {
+    "sourceHash": "4a5914e4dd6bd72fca09913d69c348dc53de0df3987cc3ae98026fd163dc7c38",
+    "translationHashes": {
+      "zh-Hant": "f38866c9aff6f06c8401d23d3e0c3e0d3a28fb4feb2ef3bee4cefd4d4753e80f",
+      "en": "7f41b1e3eaa47a517d962672971553e11957e2c55ebbb52a000e4d488bb99f79"
+    },
+    "anchors": {
+      "zh-CN": [
+        "产品优势",
+        "推荐使用部位",
+        "nice-六角内孔间隙片"
+      ],
+      "zh-Hant": [
+        "產品優點",
+        "建議使用位置",
+        "nice-六角孔間隙補償片"
+      ],
+      "en": [
+        "benefits",
+        "suggested-applications",
+        "nice-hex-bore-clearance-shims"
+      ]
+    }
+  },
+  "hardware/tube-plugs": {
+    "sourceHash": "f7faf83e459fe70c4f30596e2134e83de5bada0c1806114a634aa8cf1ce51c1f",
+    "translationHashes": {
+      "zh-Hant": "d683b43e202960d95d59e023bf639b6ee9f3c8e79c45e521cd197bd262ef481c",
+      "en": "2ef7d4f7737d5f6029b4246383404bbd45af17d33c82bb8d8b5a7798fb03d52a"
+    },
+    "anchors": {
+      "zh-CN": [
+        "如何使用",
+        "场景1连接两根铝管",
+        "场景2把铝管固定到板材上",
+        "nice-方管塞",
+        "2525方管塞-用于25mm25mm方管",
+        "2550方管塞-用于25mm50mm方管",
+        "5050方管塞-用于50mm50mm方管"
+      ],
+      "zh-Hant": [
+        "使用方式",
+        "用法-1連接兩根鋁方管",
+        "用法-2將鋁方管固定在板材上",
+        "nice-方管連接塞",
+        "2525-方管連接塞適用-25mm25mm-方管",
+        "2550-方管連接塞適用-25mm50mm-方管",
+        "5050-方管連接塞適用-50mm50mm-方管"
+      ],
+      "en": [
+        "how-to-use",
+        "application-1-joining-two-tubes",
+        "application-2-attaching-a-tube-to-a-panel",
+        "nice-tube-plugs",
+        "2525-tube-plugs-for-25mm25mm-tubing",
+        "2550-tube-plugs-for-25mm50mm-tubing",
+        "5050-tube-plugs-for-50mm50mm-tubing"
+      ]
+    }
+  },
+  "index": {
+    "sourceHash": "5890d2cd11a569dd6bd086117f740504e6c082d9c03f7c1c8091ce02051b5fd8",
+    "translationHashes": {
+      "zh-Hant": "93d32675132c220cec7e7128429ff012d4d26b34076f5e7bded0d6630cbe8a96",
+      "en": "b432b79d3eca4862354b20dc5ad519b1e62fdea980a67a41106fa569dab37272"
+    },
+    "anchors": {
+      "zh-CN": [
+        "快速索引"
+      ],
+      "zh-Hant": [
+        "產品索引"
+      ],
+      "en": [
+        "product-index"
+      ]
+    }
+  },
+  "structure/ban-cai": {
+    "sourceHash": "8bb3fdd04fcb507222a1bfe09e583f11b45019632c49004f9256428d0fb1e012",
+    "translationHashes": {
+      "zh-Hant": "8f28698e6c488daca8e06f6a7abc8d72a1474c3ccea55386a6419ff93271d6e1",
+      "en": "0f914867a570a5d198d1aa94a5da8c9de71abff081153ec95381b0990e24c93f"
+    },
+    "anchors": {
+      "zh-CN": [
+        "srpp复合板",
+        "加工方式",
+        "srpp复合板-1"
+      ],
+      "zh-Hant": [
+        "srpp-複合板",
+        "加工方式",
+        "srpp-複合板-1"
+      ],
+      "en": [
+        "srpp-composite-sheet",
+        "machining-and-cutting",
+        "srpp-composite-sheet-1"
+      ]
+    }
+  },
+  "structure/bumper": {
+    "sourceHash": "71a6e06fa469a0c64d6332c953ce09526327c8802ac920279fb7fcd35dbf9776",
+    "translationHashes": {
+      "zh-Hant": "9df9d72983527809322093ff171b02987db95d1385b86c2983385405ac87c031",
+      "en": "4e00eecc58b4a6fd775ff696caf1609cdea740ac32d33c8f7e9b611f13c54846"
+    },
+    "anchors": {
+      "zh-CN": [
+        "为什么选择使用-xpe-防撞条填充物制作机器人防撞条",
+        "测试结果",
+        "xpe-防撞条填充物"
+      ],
+      "zh-Hant": [
+        "為什麼選用-xpe-防撞條填充泡棉",
+        "測試結果",
+        "xpe-防撞條填充泡棉"
+      ],
+      "en": [
+        "why-use-xpe-bumper-foam",
+        "test-results",
+        "xpe-bumper-foam"
+      ]
+    }
+  },
+  "structure/tube": {
+    "sourceHash": "1b494de3e14b12a44ccf1bad0d9a3622840579f3095491982cafa5193aa93863",
+    "translationHashes": {
+      "zh-Hant": "d18ab209e3a3f469b3fb5906da7720b48e657319200437f80077aba36c07cccb",
+      "en": "e6b23c9ec4b395340be189ba2ec54bfba29dfc495cd2d7c651a4eac0f461694e"
+    },
+    "anchors": {
+      "zh-CN": [
+        "阵列孔铝方管",
+        "为什么选阵列孔铝方管",
+        "nice-阵列孔铝方管",
+        "2525-阵列孔铝方管-25mm25mm",
+        "2550-阵列孔铝方管-25mm50mm",
+        "5050-阵列孔铝方管-50mm50mm"
+      ],
+      "zh-Hant": [
+        "陣列孔鋁方管",
+        "為什麼選用陣列孔鋁方管",
+        "nice-陣列孔鋁方管",
+        "2525-陣列孔鋁方管25mm25mm",
+        "2550-陣列孔鋁方管25mm50mm",
+        "5050-陣列孔鋁方管50mm50mm"
+      ],
+      "en": [
+        "pre-drilled-aluminum-tubing",
+        "why-choose-pre-drilled-tubing",
+        "nice-pre-drilled-aluminum-tubing",
+        "2525-pre-drilled-tubing-25mm25mm",
+        "2550-pre-drilled-tubing-25mm50mm",
+        "5050-pre-drilled-tubing-50mm50mm"
+      ]
+    }
+  },
+  "transmission/gear": {
+    "sourceHash": "2ec01c70a86625c877524918fa1cfb08d1a40ac7ec68e07fdb746f6c8e6930dd",
+    "translationHashes": {
+      "zh-Hant": "6cb2faa8a0be52d1184bdd2086f45123c6a209cd4bb5b420a75ff18f1febf337",
+      "en": "0f1349291357ec6f941ae1e05b0bc5c129bbe53b57fa2458551945766cd22fbc"
+    },
+    "anchors": {
+      "zh-CN": [
+        "齿轮比",
+        "减速比---降低转速增加扭矩",
+        "加速比---提高转速减少扭矩",
+        "旋转方向",
+        "中心距",
+        "余量",
+        "齿间距",
+        "nice-铝制齿轮",
+        "非镂空齿轮",
+        "镂空齿轮"
+      ],
+      "zh-Hant": [
+        "齒輪比",
+        "減速降低轉速增加扭力",
+        "增速提高轉速降低扭力",
+        "旋轉方向",
+        "中心距",
+        "中心距餘量",
+        "固定中心距下調整齒輪比",
+        "nice-鋁合金齒輪",
+        "實心腹板齒輪",
+        "減重凹槽齒輪"
+      ],
+      "en": [
+        "gear-ratio",
+        "speed-reduction-more-torque-at-lower-speed",
+        "speed-increase-higher-speed-at-lower-torque",
+        "rotation-direction",
+        "center-distance",
+        "center-distance-allowance",
+        "changing-ratios-at-a-fixed-center-distance",
+        "nice-aluminum-gears",
+        "solid-web-gears",
+        "pocketed-gears"
+      ]
+    }
+  },
+  "transmission/sprocket-chain": {
+    "sourceHash": "bda301d5f552d88c79e10d1e153364b10c0518877ff42ace861b490b0e10fb2e",
+    "translationHashes": {
+      "zh-Hant": "a07feeba26a500b836f4193f9b0a77704429d52d08f4c9abcc0f49ec679fb8d6",
+      "en": "d37b37068ee735469cbcc714f4260f726c03bd9cfa68c02136a02359989c8590"
+    },
+    "anchors": {
+      "zh-CN": [
+        "参数说明",
+        "中心距",
+        "张紧",
+        "为什么要张紧",
+        "张紧的方法",
+        "nice-链轮",
+        "25",
+        "35",
+        "nice-链条",
+        "nice-全链节",
+        "nice-链条张紧器"
+      ],
+      "zh-Hant": [
+        "主要尺寸與參數",
+        "中心距",
+        "鏈條張緊",
+        "為什麼需要調整張緊程度",
+        "張緊調整方式",
+        "nice-鏈輪",
+        "25",
+        "35",
+        "nice-鏈條",
+        "nice-接頭鏈節",
+        "nice-鏈條張緊器"
+      ],
+      "en": [
+        "key-dimensions",
+        "center-distance",
+        "chain-tension",
+        "why-does-tension-matter",
+        "ways-to-adjust-tension",
+        "nice-sprockets",
+        "25",
+        "35",
+        "nice-chain",
+        "nice-master-links",
+        "nice-chain-tensioners"
+      ]
+    }
+  },
+  "wheels/flywheel": {
+    "sourceHash": "fbfab6238860dd88ae5af9abf6d32e2e2a248a0fbfa0b15e80ed2dfdac458df3",
+    "translationHashes": {
+      "zh-Hant": "2e03ca349a17de10e65af40b8843223f0b4a6988209457bfc087913becc4447f",
+      "en": "43dfe74a37f3dab2bf9b42b6c527c555abe695920d0d294e87442c314e3feaaa"
+    },
+    "anchors": {
+      "zh-CN": [
+        "黄铜飞轮"
+      ],
+      "zh-Hant": [
+        "黃銅飛輪"
+      ],
+      "en": [
+        "brass-flywheel"
+      ]
+    }
+  },
+  "wheels/roller-system": {
+    "sourceHash": "fe00a4b4563f790a3ee7425a5615462f4d7ecfeebee8e6412fa39c4d9ef10176",
+    "translationHashes": {
+      "zh-Hant": "3c1ab3a13a7db9f776930a33004d874da5cf3e0974ce003702926874fdd58062",
+      "en": "4e5d8e8d8045fbc3bd81e81eb2d7e409c4b64d511d85ffe80379b707c90c6809"
+    },
+    "anchors": {
+      "zh-CN": [
+        "滚轴系统",
+        "亮点",
+        "配置",
+        "组件清单",
+        "滚轴塞",
+        "滚轴同步带轮-nice-07-05-003",
+        "滚轴转轴",
+        "安装指南",
+        "工具清单",
+        "单滚轴塞",
+        "滚轴塞滚轴同步带轮",
+        "滚轴塞双滚轴同步带轮",
+        "滚筒预加工",
+        "滚筒系统",
+        "硅胶防滑胶带",
+        "亮点-1"
+      ],
+      "zh-Hant": [
+        "滾筒系統",
+        "產品特色",
+        "配置方式",
+        "零件清單",
+        "滾筒端塞",
+        "滾筒時規皮帶輪-nice-07-05-003",
+        "滾筒軸",
+        "組裝指南",
+        "所需工具",
+        "僅端塞",
+        "端塞單時規皮帶輪",
+        "端塞雙時規皮帶輪",
+        "滾筒圓管加工準備",
+        "滾筒系統零件規格",
+        "矽膠防滑膠帶",
+        "產品特色-1"
+      ],
+      "en": [
+        "roller-system",
+        "features",
+        "configurations",
+        "components",
+        "roller-end-plugs",
+        "roller-timing-pulley-nice-07-05-003",
+        "roller-shafts",
+        "assembly-guide",
+        "tools-required",
+        "end-plug-only",
+        "end-plug--one-timing-pulley",
+        "end-plug--two-timing-pulleys",
+        "preparing-the-roller-tube",
+        "roller-system-parts",
+        "silicone-grip-tape",
+        "features-1"
+      ]
+    }
+  },
+  "wheels/silicone-tube": {
+    "sourceHash": "6fc82b0a50e046bf51965fe59da424be34dd57e5c25807bedb8c9340c062012f",
+    "translationHashes": {
+      "zh-Hant": "19072b04b8f60f62b3dd328061238266e921a87b95e133fc0dcec92d1768f437",
+      "en": "53c89e30a4a4a85f3227911248226d6aae05307c37f754c78eb6386eb9807a51"
+    },
+    "anchors": {
+      "zh-CN": [
+        "硅胶套"
+      ],
+      "zh-Hant": [
+        "矽膠滾筒套管"
+      ],
+      "en": [
+        "silicone-roller-sleeves"
+      ]
+    }
+  },
+  "wheels/silicone-wheel": {
+    "sourceHash": "de2f0f1ebc84942a1fb15c64ae58b38795bdf3b2655e566344dc46fb80c2cb82",
+    "translationHashes": {
+      "zh-Hant": "b319c52e716f192ad59b7e85b43c0bde00426616bec3d02fc304497e385e9c32",
+      "en": "f02694e44eb7f102dbac0349a77e09284a5a30cb77e175d1cee9645f5e641d5d"
+    },
+    "anchors": {
+      "zh-CN": [
+        "2-塑芯硅胶轮",
+        "3-塑芯硅胶轮",
+        "4-塑芯硅胶轮"
+      ],
+      "zh-Hant": [
+        "2-塑膠芯矽膠輪",
+        "3-塑膠芯矽膠輪",
+        "4-塑膠芯矽膠輪"
+      ],
+      "en": [
+        "2-plastic-core-silicone-wheels",
+        "3-plastic-core-silicone-wheels",
+        "4-plastic-core-silicone-wheels"
+      ]
+    }
+  }
+}

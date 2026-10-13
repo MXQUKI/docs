@@ -1,0 +1,738 @@
+---
+title: "Gears"
+description: "Gears transfer rotation from one shaft to another. By pairing different tooth counts, you can trade output speed for torque:"
+icon: "gear"
+sidebar:
+  order: 10
+---
+
+
+import { BuyButton, DocImage, MathBlock, ProductTable } from '~/components/mdx';
+
+<DocImage src="/assets/docs/transmission/parameter.png" alt="Gear dimensions and terminology" width={375} />
+
+Gears transfer rotation from one shaft to another. By pairing different tooth counts, you can trade output speed for torque:
+
+* For more torque, drive a larger gear with a smaller one. Output speed decreases while torque increases.
+* For more speed, drive a smaller gear with a larger one. Output speed increases while torque decreases.
+
+Gear drives are especially useful when:
+
+1. **Shafts are close together:** power needs to travel only a short distance.
+2. **Space is limited:** a substantial speed reduction must fit in a compact mechanism.
+3. **Direction must reverse:** the two shafts need to rotate in opposite directions.
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "Name"
+  },
+  {
+    key: "c1",
+    label: "Symbol"
+  },
+  {
+    key: "c2",
+    label: "Description"
+  },
+  {
+    key: "c3",
+    label: "Formula"
+  }
+]}
+  rows={[
+  {
+    c0: "Tooth count",
+    c1: "T",
+    c2: "Total number of teeth on the gear",
+    c3: ""
+  },
+  {
+    c0: "Face width",
+    c1: "FW",
+    c2: "Width of the toothed portion",
+    c3: "9.5mm across the range"
+  },
+  {
+    c0: "Overall width",
+    c1: "OW",
+    c2: "Total width of the gear",
+    c3: "12.5mm across the range"
+  },
+  {
+    c0: "Outside diameter",
+    c1: "OD",
+    c2: "Diameter measured over the tooth tips",
+    c3: "[(T + 2) / DP] inch"
+  },
+  {
+    c0: "Diametral pitch (DP)",
+    c1: "DP",
+    c2: "Tooth count per inch of pitch diameter; specifies the gear tooth size",
+    c3: "T / PD"
+  },
+  {
+    c0: "Pitch diameter",
+    c1: "PD",
+    c2: "Diameter of the theoretical circle that rolls against the mating gear's pitch circle",
+    c3: "(T / DP) inch"
+  },
+  {
+    c0: "Gear ratio",
+    c1: "i",
+    c2: "Ratio of the two gear tooth counts",
+    c3: "T_driver / T_driven"
+  }
+]}
+/>
+
+## Gear Ratio
+
+The ratio between two meshing gears determines output speed and torque. With equal tooth counts, the speed and torque remain the same in the ideal case.
+
+### Speed Reduction: More Torque at Lower Speed
+
+<DocImage src="/assets/docs/transmission/reduction_ratio.png" alt="20-tooth gear driving a 60-tooth gear" width={375} />
+
+**Use this when:** the mechanism needs more torque.
+
+**Arrangement:** a small driving gear turns a larger driven gear.
+
+**Example:** a 20-tooth gear drives a 60-tooth gear.
+
+* Driving-to-driven tooth ratio: 1:3
+* Output speed is ⅓ of the input speed
+* Output torque is 3 times the input torque, ignoring losses
+
+### Speed Increase: Higher Speed at Lower Torque
+
+<DocImage src="/assets/docs/transmission/accel_ratio.png" alt="40-tooth gear driving a 20-tooth gear" width={375} />
+
+**Use this when:** the mechanism needs a higher maximum speed.
+
+**Arrangement:** a large driving gear turns a smaller driven gear.
+
+**Example:** a 40-tooth gear drives a 20-tooth gear.
+
+* Driving-to-driven tooth ratio: 2:1
+* Output speed is 2 times the input speed
+* Output torque is ½ of the input torque, ignoring losses
+
+## Rotation Direction
+
+Gears also change the direction of rotation.
+
+<DocImage src="/assets/docs/transmission/direction.png" alt="Rotation direction with two and three gears" width={375} />
+
+* **Two gears:** the input and output rotate in opposite directions.
+* **Three gears:** the input and output rotate in the same direction.
+
+## Center Distance
+
+Center distance is the distance between the two shaft centers:
+
+<MathBlock expression={String.raw`C=\frac{D_1}{2}+\frac{D_2}{2}+a`} />
+
+Here, C is center distance, D₁ and D₂ are the two pitch diameters, and a is the center-distance allowance. Use the same units throughout.
+
+### Center-Distance Allowance
+
+In practice, adding a small allowance (0.03mm–0.05mm) to the theoretical center distance can:
+
+* Reduce gear wear
+* Help the gears run smoothly
+* Introduce slightly more backlash between the teeth
+
+**Suggested allowances:**
+
+* Close fit: +0.000mm (theoretical center distance, tightest mesh)
+* Running clearance: +0.03mm to +0.05mm (recommended for smoother operation)
+
+## Changing Ratios at a Fixed Center Distance
+
+:::note
+
+For gears of the same diametral pitch, keeping the total tooth count unchanged lets you change the ratio without moving the shafts.
+
+:::
+
+For example:
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "Driving gear"
+  },
+  {
+    key: "c1",
+    label: "Driven gear"
+  },
+  {
+    key: "c2",
+    label: "Total tooth count"
+  },
+  {
+    key: "c3",
+    label: "Gear ratio"
+  },
+  {
+    key: "c4",
+    label: "Center distance"
+  }
+]}
+  rows={[
+  {
+    c0: "20t",
+    c1: "60t",
+    c2: "80t",
+    c3: "1:3",
+    c4: "50.8mm (2\")"
+  },
+  {
+    c0: "32t",
+    c1: "48t",
+    c2: "80t",
+    c3: "1:1.5",
+    c4: "50.8mm (2\")"
+  }
+]}
+/>
+
+Both gear pairs above have the same center distance (50.8mm), but different ratios.
+
+## NICE Aluminum Gears
+
+<BuyButton href="https://item.taobao.com/item.htm?id=1008715504499&mi_id=0000PiXYrnKGOqLR31zYdTL_g8kbIzI5KpOxVPvvSTnKGYY&spm=a21xtw.29178619.0.0" />
+
+All NICE gears share these specifications:
+
+* **Diametral pitch:** 20DP
+* **Pressure angle:** 14.5°
+* **Face width:** 9.5mm
+
+This makes it easy to change gear combinations to tune performance. Keep the total tooth count unchanged when retaining the same shaft spacing.
+
+### Solid-Web Gears
+
+<DocImage src="/assets/docs/transmission/20dp.png" alt="NICE solid-web aluminum gear" width={375} />
+
+* ½″ hex bore, compatible with standard ½" hex and rounded-hex shafts
+* 7075-T6 aluminum alloy with black hard anodizing
+* High strength and wear resistance
+* 9.5mm face width
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "SKU"
+  },
+  {
+    key: "c1",
+    label: "Weight"
+  },
+  {
+    key: "c2",
+    label: "Tooth count"
+  },
+  {
+    key: "c3",
+    label: "Drawing",
+    type: "pdf"
+  },
+  {
+    key: "c4",
+    label: "CAD model",
+    type: "step"
+  },
+  {
+    key: "c5",
+    label: "Onshape",
+    type: "onshape",
+    align: "center"
+  }
+]}
+  rows={[
+  {
+    c0: "NICE-02-01-001",
+    c1: "10g",
+    c2: "20t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-01.pdf",
+      label: "NICE-D-02-01-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-001.step",
+      label: "NICE-02-01-001.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-002",
+    c1: "13g",
+    c2: "22t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-01.pdf",
+      label: "NICE-D-02-01-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-002.step",
+      label: "NICE-02-01-002.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-003",
+    c1: "16g",
+    c2: "24t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-01.pdf",
+      label: "NICE-D-02-01-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-003.step",
+      label: "NICE-02-01-003.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-004",
+    c1: "20g",
+    c2: "26t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-01.pdf",
+      label: "NICE-D-02-01-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-004.step",
+      label: "NICE-02-01-004.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-005",
+    c1: "23g",
+    c2: "28t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-01.pdf",
+      label: "NICE-D-02-01-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-005.step",
+      label: "NICE-02-01-005.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-006",
+    c1: "27g",
+    c2: "30t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-01.pdf",
+      label: "NICE-D-02-01-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-006.step",
+      label: "NICE-02-01-006.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-007",
+    c1: "31g",
+    c2: "32t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-01.pdf",
+      label: "NICE-D-02-01-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-007.step",
+      label: "NICE-02-01-007.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-008",
+    c1: "25g",
+    c2: "34t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-01.pdf",
+      label: "NICE-D-02-01-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-008.step",
+      label: "NICE-02-01-008.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-009",
+    c1: "40g",
+    c2: "36t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-01.pdf",
+      label: "NICE-D-02-01-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-009.step",
+      label: "NICE-02-01-009.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-010",
+    c1: "45g",
+    c2: "38t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-01.pdf",
+      label: "NICE-D-02-01-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-010.step",
+      label: "NICE-02-01-010.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  }
+]}
+/>
+
+### Pocketed Gears
+
+<DocImage src="/assets/docs/transmission/20dp_pocketed.png" alt="NICE pocketed aluminum gear" width={375} />
+
+Pocketed versions are available for larger gears with 40 teeth and above, reducing weight while retaining strength.
+
+* ½″ hex bore, compatible with standard ½" hex and rounded-hex shafts
+* 7075-T6 aluminum alloy with black hard anodizing
+* 9.5mm face width
+* Weight-relief pockets with a minimum web thickness of 2.5mm
+* Lower weight with reliable strength
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "SKU"
+  },
+  {
+    key: "c1",
+    label: "Weight"
+  },
+  {
+    key: "c2",
+    label: "Tooth count"
+  },
+  {
+    key: "c3",
+    label: "Drawing",
+    type: "pdf"
+  },
+  {
+    key: "c4",
+    label: "CAD model",
+    type: "step"
+  },
+  {
+    key: "c5",
+    label: "Onshape",
+    type: "onshape",
+    align: "center"
+  }
+]}
+  rows={[
+  {
+    c0: "NICE-02-01-011",
+    c1: "27g",
+    c2: "40t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-011.step",
+      label: "NICE-02-01-011.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-012",
+    c1: "32g",
+    c2: "42t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-012.step",
+      label: "NICE-02-01-012.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-013",
+    c1: "34g",
+    c2: "44t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-013.step",
+      label: "NICE-02-01-013.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-014",
+    c1: "36g",
+    c2: "46t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-014.step",
+      label: "NICE-02-01-014.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-015",
+    c1: "41g",
+    c2: "48t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-015.step",
+      label: "NICE-02-01-015.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-016",
+    c1: "41g",
+    c2: "50t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-016.step",
+      label: "NICE-02-01-016.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-017",
+    c1: "44g",
+    c2: "52t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-017.step",
+      label: "NICE-02-01-017.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-018",
+    c1: "45g",
+    c2: "54t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-018.step",
+      label: "NICE-02-01-018.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-019",
+    c1: "49g",
+    c2: "56t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-019.step",
+      label: "NICE-02-01-019.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-020",
+    c1: "51g",
+    c2: "58t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-020.step",
+      label: "NICE-02-01-020.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-021",
+    c1: "51g",
+    c2: "60t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-021.step",
+      label: "NICE-02-01-021.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-022",
+    c1: "57g",
+    c2: "62t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-022.step",
+      label: "NICE-02-01-022.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-023",
+    c1: "60g",
+    c2: "64t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-023.step",
+      label: "NICE-02-01-023.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-024",
+    c1: "63g",
+    c2: "66t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-024.step",
+      label: "NICE-02-01-024.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-025",
+    c1: "69g",
+    c2: "68t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-025.step",
+      label: "NICE-02-01-025.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-026",
+    c1: "69g",
+    c2: "70t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-026.step",
+      label: "NICE-02-01-026.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  },
+  {
+    c0: "NICE-02-01-027",
+    c1: "72g",
+    c2: "72t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-01-02.pdf",
+      label: "NICE-D-02-01-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-01-027.step",
+      label: "NICE-02-01-027.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/7f22433f4e3029512ffe8385"
+    }
+  }
+]}
+/>

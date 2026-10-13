@@ -1,0 +1,100 @@
+---
+title: "3D Printing Inserts"
+description: "3D printing is increasingly used to make pulleys, gears, and other power transmission parts. However, printed parts can have several limitations:"
+icon: "seal"
+sidebar:
+  order: 40
+---
+
+
+import { BuyButton, DocImage, OnshapeLink, ProductTable } from '~/components/mdx';
+
+3D printing is increasingly used to make pulleys, gears, and other power transmission parts. However, printed parts can have several limitations:
+
+* Limited torque capacity
+* Deformation around areas of concentrated stress
+* Inconsistent dimensional accuracy
+
+NICE 3D printing inserts address these issues with a 6061-T6 aluminum body weighing just 3.4g. The insert reinforces the printed part and helps distribute stress around the shaft interface.
+
+## How to Use
+
+#### Installing an Insert in a Pulley
+
+<DocImage src="/assets/docs/hardware/Insert_wPulley.png" alt="Insert fitted inside a printed pulley" width={375} />
+
+The insert helps prevent cracking and deformation caused by concentrated stress, while allowing the pulley to be printed with substantially less infill.
+
+## NICE Pulley Generator
+
+<OnshapeLink href="https://cad.onshape.com/documents/7f060273e4bab729adead569/w/19d349784e7c91c00cdea39d/e/28ab6289faa784aaacb61227?configuration=Belt_Width%3D0.011%2Bmeter%3BBreaing_T%3D0.00553%2Bmeter%3BList_gjj2ZuSKOEpUZB%3DDefault%3BList_sAlfs7a70W4yCe%3DDead_Axle%3BPocket%3Dtrue%3BTeeth%3D36.0%3B____%3Dfalse%3Bbearing_OD%3D0.0247%2Bmeter&renderMode=0&uiState=696ba1bdfadd99dd2d4a66b1" />
+
+<DocImage src="/assets/docs/hardware/%E6%88%AA%E5%B1%8F2026-01-17%2022.57.42.png" alt="NICE pulley generator settings" />
+
+* HTD 5mm/3mm tooth profiles
+* Adjustable face width and tooth count
+* One-click weight-relief pockets
+* Additional bore options for inserts and dead-shaft mounting
+
+:::caution
+
+Printed dimensions vary with the printer, material, and print settings. Treat the NICE Pulley Generator defaults as a starting point. Adjust fit tolerances and other settings before printing a large batch.
+
+:::
+
+## NICE Printing Inserts for 1/2'' Shafts
+
+<BuyButton href="https://item.taobao.com/item.htm?id=1012638862342&mi_id=0000iTMzGn9Bda-E2gozCIBJMOiTfyOC428w1lgRQPEArEo&spm=a21xtw.29178619.0.0&xxc=shop&skuId=6015704508382" />
+
+<DocImage src="/assets/docs/hardware/insert.png" alt="NICE aluminum printing insert" width={375} />
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "SKU"
+  },
+  {
+    key: "c1",
+    label: "Weight"
+  },
+  {
+    key: "c2",
+    label: "Compatible hex shaft"
+  },
+  {
+    key: "c3",
+    label: "Drawing",
+    type: "pdf"
+  },
+  {
+    key: "c4",
+    label: "CAD model",
+    type: "step"
+  },
+  {
+    key: "c5",
+    label: "Onshape",
+    type: "onshape",
+    align: "center"
+  }
+]}
+  rows={[
+  {
+    c0: "NICE-04-03-001",
+    c1: "3.4g",
+    c2: "1/2inch",
+    c3: {
+      href: "/assets/docs/hardware/NICE-D-04-03-01.pdf",
+      label: "NICE-D-04-03-01.pdf"
+    },
+    c4: {
+      href: "/assets/docs/hardware/NICE-04-03-001.step",
+      label: "NICE-04-03-001.step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/f6b4f6cbeb32953ba733ca8b"
+    }
+  }
+]}
+/>

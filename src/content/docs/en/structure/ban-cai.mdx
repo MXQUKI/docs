@@ -1,0 +1,90 @@
+---
+title: "Sheet Material"
+description: "SRPP is a lightweight, tough composite sheet made from polypropylene fibers in a polypropylene matrix."
+icon: "square-full"
+sidebar:
+  order: 20
+---
+
+import { BuyButton, DocImage, ProductTable } from '~/components/mdx';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## SRPP Composite Sheet
+
+<BuyButton href="https://item.taobao.com/item.htm?id=1057526045542&mi_id=0000WHd6w7g9oSXcgD_fbYqh6fyMIQfaAyainaVxjsvMmdY&spm=a21xtw.29178619.0.0&xxc=shop&skuId=6099576289269" />
+
+<DocImage src="/assets/docs/structure/ban-cai.png" alt="SRPP composite sheet" variant="wide" />
+
+**Self-reinforced polypropylene (SRPP)** combines polypropylene fibers with a polypropylene matrix to form a lightweight, tough sheet. Using the same material family for both phases produces a well-bonded composite with good impact resistance, flex resistance, and energy absorption.
+
+Compared with carbon fiber sheet, SRPP prioritizes flexibility, ductility, and remaining intact under impact over maximum stiffness. It is less prone to delamination or brittle fracture under load. Compared with polycarbonate (PC), it offers higher stiffness and strength at lower density, while absorbing impact through bending and stretching.
+
+For FRC robots, SRPP is well suited to intakes, guards, and impact panels that repeatedly experience contact, compression, or flexing.
+
+:::note
+
+The composite pressing process can cause slight thickness variation, typically around ±0.2mm. For close-fitting assemblies or clearance-sensitive designs, measure the sheet after delivery and design around its actual thickness.
+
+SRPP is a flexible polypropylene-based thermoplastic sheet. Store it flat and fully supported. Avoid leaning it against a wall, leaving sections unsupported, or keeping it bent under load. Improper storage can cause warping or permanent deformation.
+
+:::
+
+### Machining and Cutting
+
+**Reference machining parameters**
+
+<Tabs>
+
+<TabItem label="Laser cutting">
+
+<ProductTable
+  columns={[
+    { key: "c0", label: "Laser rating" },
+    { key: "c1", label: "Maximum power" },
+    { key: "c2", label: "Minimum power" },
+    { key: "c3", label: "Speed" },
+    { key: "c4", label: "Passes" }
+  ]}
+  rows={[
+    { c0: "80W", c1: "95%", c2: "90%", c3: "15mm/s", c4: "3 passes" }
+  ]}
+/>
+
+</TabItem>
+
+<TabItem label="CNC milling">
+
+Tool: D4 single-flute end mill
+
+<ProductTable
+  columns={[
+    { key: "c0", label: "Spindle speed" },
+    { key: "c1", label: "Cutting feed rate" }
+  ]}
+  rows={[
+    { c0: "24000 rpm", c1: "4000 mm/min" }
+  ]}
+/>
+
+</TabItem>
+
+</Tabs>
+
+:::danger
+
+SRPP is a polypropylene-based thermoplastic composite. Laser cutting at high temperatures can release smoke, volatile organic compounds, and irritating gases. Inhaling them may cause dizziness, nausea, or throat irritation. Use adequate ventilation and effective fume extraction/filtration during cutting or other thermal processing, and keep people away from the fumes.
+
+:::
+
+### SRPP Composite Sheet
+
+<ProductTable
+  columns={[
+    { key: "sku", label: "SKU" },
+    { key: "size", label: "Dimensions" },
+    { key: "thickness", label: "Thickness" }
+  ]}
+  rows={[
+    { sku: "NICE-06-02-001", size: "900mm*600mm", thickness: "6mm" }
+  ]}
+/>

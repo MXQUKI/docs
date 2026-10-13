@@ -1,0 +1,464 @@
+---
+title: "鏈輪與鏈條"
+description: "了解鏈傳動的尺寸選擇與張緊方式，並查閱 NICE 鏈輪、鏈條、接頭鏈節及鏈條張緊器規格。"
+icon: "link"
+sidebar:
+  order: 20
+---
+
+
+import { BuyButton, DocImage, ProductTable } from '~/components/mdx';
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<DocImage src="/assets/docs/transmission/parameter%20%281%29.png" alt="鏈輪與鏈條尺寸示意" width={375} />
+
+## 主要尺寸與參數
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "名稱"
+  },
+  {
+    key: "c1",
+    label: "說明"
+  }
+]}
+  rows={[
+  {
+    c0: "節距（Pitch）",
+    c1: "相鄰鏈銷中心的距離，是區分鏈條規格的依據"
+  },
+  {
+    c0: "節圓直徑（Pitch Diameter）",
+    c1: "鏈條繞在鏈輪上時，通過鏈銷中心的理論圓直徑"
+  },
+  {
+    c0: "齒頂圓直徑（Outside Diameter）",
+    c1: "鏈輪齒頂最外緣的直徑"
+  },
+  {
+    c0: "鏈條避讓直徑（Chain Clearance Diameter）",
+    c1: "鏈輪裝上鏈條後所需的最大外圍空間，設計時須預留避讓尺寸"
+  }
+]}
+/>
+
+## 中心距
+
+:::note
+
+鏈條可以拆卸並增減鏈節，因此可依以下順序設計：
+
+1. 依機器人結構決定兩個鏈輪的中心距。
+2. 依中心距調整鏈條長度。
+3. 調整張緊程度，讓鏈條與鏈輪正常配合。
+
+:::
+
+:::caution
+
+* 中心距不可太小，以免鏈輪互相干涉。
+* 中心距不宜過大，以免鏈條難以維持適當張緊程度。
+
+:::
+
+## 鏈條張緊
+
+鏈傳動需要適當的鬆緊程度，才能穩定運作。
+
+### 為什麼需要調整張緊程度？
+
+**鏈條過鬆：**
+
+* 容易跳齒或脫鏈
+* 磨損加快
+* 空行程增加，機構反應變慢
+
+**鏈條過緊：**
+
+* 鏈條、軸承與軸承受過大負載
+* 摩擦增加，耗費馬達動力
+* 零件壽命縮短
+
+**張緊適中：**
+
+* 傳動順暢可靠
+* 磨損較少
+* 傳動效率較佳
+
+<DocImage src="/assets/docs/transmission/tension.png" alt="鏈條張緊程度示意" width={375} />
+
+#### 張緊調整方式
+
+<Tabs>
+
+<TabItem label="調整鏈條長度">
+
+使用截鏈器與接頭鏈節（Master Link），即可增減鏈節數量。
+
+**適用時機：** 鏈條明顯過鬆或過緊。
+
+</TabItem>
+
+<TabItem label="調整中心距">
+
+移動鏈輪位置，改變兩根軸之間的中心距。
+
+**適用時機：** 結構設計階段，或安裝位置留有調整空間。
+
+**限制：** 可能需要重新設計安裝結構。
+
+</TabItem>
+
+<TabItem label="張緊器（非閉環鏈條）">
+
+<DocImage src="/assets/docs/transmission/tensioner_usage.png" alt="張緊器用於非閉環鏈條的示意" width={375} />
+
+* 適用於鏈條不繞行完整閉環的機構
+* 旋轉中間的調整旋鈕即可拉緊鏈條
+
+</TabItem>
+
+<TabItem label="惰輪（閉環鏈傳動）">
+
+<DocImage src="/assets/docs/transmission/idle_gear.png" alt="以惰輪調整閉環鏈條的張緊程度" width={375} />
+
+* 在鏈條路徑中加入一個小鏈輪
+* 可設於鏈條環的內側或外側
+* 增加鏈條與鏈輪的嚙合範圍，讓傳動更穩定
+
+:::note
+
+惰輪可調整張緊程度，不會改變傳動比。
+
+:::
+
+</TabItem>
+
+</Tabs>
+
+## NICE 鏈輪
+
+<BuyButton href="https://item.taobao.com/item.htm?id=1008703824374&mi_id=0000Iucv4yNyFMeLl09NvXO1ylTUk43X_IbMUl2EOezrC3s&spm=a21xtw.29178619.0.0" />
+
+<DocImage src="/assets/docs/transmission/nice_sprocket.png" alt="NICE 鋁合金鏈輪" width={375} />
+
+* ½″ 六角孔，相容標準 ½" 六角軸與圓角六角軸
+* 7075-T6 鋁合金，黑色陽極處理
+* 附對位標記，方便將兩個鏈輪調整至相同角度
+
+### #25
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "SKU"
+  },
+  {
+    key: "c1",
+    label: "重量"
+  },
+  {
+    key: "c2",
+    label: "齒數"
+  },
+  {
+    key: "c3",
+    label: "圖面",
+    type: "pdf"
+  },
+  {
+    key: "c4",
+    label: "模型",
+    type: "step"
+  },
+  {
+    key: "c5",
+    label: "Onshape",
+    type: "onshape",
+    align: "center"
+  }
+]}
+  rows={[
+  {
+    c0: "NICE-02-02-001",
+    c1: "10g",
+    c2: "18t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-02-01%20%281%29.pdf",
+      label: "NICE-D-02-02-01 (1).pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-02-001%20%281%29.step",
+      label: "NICE-02-02-001 (1).step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/ec81485171e6164bf598792c"
+    }
+  },
+  {
+    c0: "NICE-02-02-002",
+    c1: "14g",
+    c2: "22t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-02-01%20%281%29.pdf",
+      label: "NICE-D-02-02-01 (1).pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-02-002%20%281%29.step",
+      label: "NICE-02-02-002 (1).step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/ec81485171e6164bf598792c"
+    }
+  }
+]}
+/>
+
+### #35
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "SKU"
+  },
+  {
+    key: "c1",
+    label: "重量"
+  },
+  {
+    key: "c2",
+    label: "齒數"
+  },
+  {
+    key: "c3",
+    label: "圖面",
+    type: "pdf"
+  },
+  {
+    key: "c4",
+    label: "模型",
+    type: "step"
+  },
+  {
+    key: "c5",
+    label: "Onshape",
+    type: "onshape",
+    align: "center"
+  }
+]}
+  rows={[
+  {
+    c0: "NICE-02-02-003",
+    c1: "20g",
+    c2: "15t",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-02-02.pdf",
+      label: "NICE-D-02-02-02.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-02-003%20%282%29.step",
+      label: "NICE-02-02-003 (2).step"
+    },
+    c5: {
+      href: "https://cad.onshape.com/documents/ba7820e266bf07d2040335fc/w/3a4be06c69e78ddc646b65a4/e/ec81485171e6164bf598792c"
+    }
+  }
+]}
+/>
+
+## NICE 鏈條
+
+* 規格：#25 / #25H / #35
+* 長度：10ft（約 3 公尺）
+* 材質：高強度鏈條鋼
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "購買",
+    type: "buy",
+    align: "center"
+  },
+  {
+    key: "c1",
+    label: "SKU"
+  },
+  {
+    key: "c2",
+    label: "重量"
+  },
+  {
+    key: "c3",
+    label: "規格"
+  },
+  {
+    key: "c4",
+    label: "長度（ft）"
+  }
+]}
+  rows={[
+  {
+    c0: {
+      href: "https://item.taobao.com/item.htm?id=1006532103368&mi_id=00005cHRAAB_ykw5E0XdtquQIAONLPIPn_CrOPn183Rqtzg&spm=a21xtw.29178619.0.0",
+      label: "購買"
+    },
+    c1: "NICE-02-02-005",
+    c2: "455g",
+    c3: "#25",
+    c4: "10"
+  },
+  {
+    c0: {
+      href: "https://item.taobao.com/item.htm?id=1006532103368&mi_id=00005cHRAAB_ykw5E0XdtquQIAONLPIPn_CrOPn183Rqtzg&spm=a21xtw.29178619.0.0",
+      label: "購買"
+    },
+    c1: "NICE-02-02-004",
+    c2: "531g",
+    c3: "#25H",
+    c4: "10"
+  },
+  {
+    c0: {
+      href: "https://item.taobao.com/item.htm?id=1010052110010&mi_id=0000JctZwzt1cQh3yJmS7lAkYJrL-kE4TwBfAA6Mt7xcfhs&spm=a21xtw.29178619.0.0&skuId=6011153336239",
+      label: "購買"
+    },
+    c1: "NICE-02-02-006",
+    c2: "1049g",
+    c3: "#35",
+    c4: "10"
+  }
+]}
+/>
+
+## NICE 接頭鏈節
+
+<BuyButton href="https://item.taobao.com/item.htm?id=1007980749424&mi_id=0000eS82sUgIu8kZVW6YTe04SSr5pf9xfAquYVKRcNCq2Xk&spm=a21xtw.29178619.0.0" />
+
+* 規格：#25 / #25H / #35
+* 數量：每包 5 個
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "SKU"
+  },
+  {
+    key: "c1",
+    label: "重量"
+  },
+  {
+    key: "c2",
+    label: "規格"
+  }
+]}
+  rows={[
+  {
+    c0: "NICE-02-02-007",
+    c1: "1g",
+    c2: "#25"
+  },
+  {
+    c0: "NICE-02-02-008",
+    c1: "1g",
+    c2: "#25H"
+  },
+  {
+    c0: "NICE-02-02-009",
+    c1: "4g",
+    c2: "#35"
+  }
+]}
+/>
+
+## NICE 鏈條張緊器
+
+<BuyButton href="https://item.taobao.com/item.htm?id=1007154306593&mi_id=0000os9LBqznREtiA5NSsLmaF1jkBytMTOSSjCu5g10xdpM&spm=a21xtw.29178619.0.0" />
+
+<DocImage src="/assets/docs/transmission/tensioner.png" alt="NICE 鏈條張緊器" width={375} />
+
+安裝方式：
+
+1. 將兩端的固定螺栓從中間旋鈕旋出。
+2. 使用截鏈器，將固定螺栓分別接至鏈條兩端。
+3. 將兩根固定螺栓同時對準旋鈕兩端。
+4. 旋轉旋鈕，將鏈條拉緊。
+
+:::danger
+
+此張緊器僅適用於鏈條不繞行完整閉環的機構。若張緊器移動至鏈輪處，將損壞鏈輪！
+
+:::
+
+* 規格：#25 / #25H / #35
+* 調整旋鈕適用 M6 螺栓，連接穩固
+
+<ProductTable
+  columns={[
+  {
+    key: "c0",
+    label: "SKU"
+  },
+  {
+    key: "c1",
+    label: "重量"
+  },
+  {
+    key: "c2",
+    label: "規格"
+  },
+  {
+    key: "c3",
+    label: "圖面",
+    type: "pdf"
+  },
+  {
+    key: "c4",
+    label: "模型",
+    type: "step"
+  },
+  {
+    key: "c5",
+    label: "Onshape",
+    type: "onshape",
+    align: "center"
+  }
+]}
+  rows={[
+  {
+    c0: "NICE-02-02-010",
+    c1: "16g",
+    c2: "#25/#25H",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-02-03.pdf",
+      label: "NICE-D-02-02-03.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-02-010.step",
+      label: "NICE-02-02-010.step"
+    },
+    c5: null
+  },
+  {
+    c0: "NICE-02-02-011",
+    c1: "",
+    c2: "#35",
+    c3: {
+      href: "/assets/docs/transmission/NICE-D-02-02-03.pdf",
+      label: "NICE-D-02-02-03.pdf"
+    },
+    c4: {
+      href: "/assets/docs/transmission/NICE-02-02-011.step",
+      label: "NICE-02-02-011.step"
+    },
+    c5: null
+  }
+]}
+/>
