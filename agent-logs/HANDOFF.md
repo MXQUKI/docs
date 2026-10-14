@@ -1,5 +1,17 @@
 # Handoff
 
+更新时间：2026-10-14 09:23:34 +02:00
+
+## 生产发布准备与首页申请按钮
+
+- 用户已授权发布生产，并要求申请入口移到“欢迎”标题右侧同一行，使用橙色背景。三语首页通过通用 `titleAction` frontmatter 配置独立链接（不嵌入 h1），移除快速索引下原文本入口。
+- 简体“申请赞助”、台湾繁体“申請贊助”、英文“Apply for support”分别指向同语言申请页。新增 `tests/home-application-button.mjs`，支持 `NICE_TEST_URL` 与 `NICE_SCREENSHOT_PATH`。
+- 已通过三语 × 320/390/1440px × 深浅色的 18 组按钮定位、同排、颜色、目标链接和溢出验证，以及原站点三语产品、菜单和搜索浏览器回归。content/i18n lint、7 项语言测试、8 项申请测试、Astro check 和 build 全部通过；重新读取飞书并核对 40 题完整源配置，无偏差。
+- 已创建独立的免费新加坡区 Neon 生产库 `nice-frc-applications-production`（`store_pfus011VOQ6rzcxO`），与 Preview 连接不同，并执行 `db/applications.sql`。生产飞书配置已就绪，独立生成生产回执/定时任务密钥，`APPLICATIONS_OPEN=true`；未自行设定截止日期。Preview 保持关闭正式收集。
+- 下一步：提交并合并 PR #4，发布 Vercel Production，在正式域名核对按钮/三语问卷/开放状态，并执行一条显式标注的合成测试申请与重复提交核验。原生产回滚参考为 `dpl_2PZsoybg8Q2JfVs1p5s8bgdDMe2Q`。
+
+---
+
 更新时间：2026-10-14 09:09:36 +02:00
 
 ## Team NICE 三语官网申请页（预览已部署，生产未发布）

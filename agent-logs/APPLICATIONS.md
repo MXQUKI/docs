@@ -18,17 +18,17 @@
 
 ## 正式收集前配置
 
-Vercel 项目：NI Corporate / docs。默认生产域名保持 `docs.nicerobotics.hk`。Preview 与 Production 必须使用分开的飞书目标表和数据库。所有操作先在预览环境验收。
+Vercel 项目：NI Corporate / docs。默认生产域名保持 `docs.nicerobotics.hk`。Preview 与 Production 使用分开的数据库和回执/定时任务密钥。日常 Preview 关闭真实提交；如需重新开启联调，应使用独立飞书测试表，或取得明确授权后仅写入带显著测试标记的合成记录。所有操作先在预览环境验收。
 
 1. 准备支持 Neon HTTP driver 的 PostgreSQL 连接（推荐 Neon），执行 `db/applications.sql`。本实现使用 `@neondatabase/serverless`，不能把任意 PostgreSQL TCP 地址直接当作已兼容。
 2. 飞书企业自建应用需要应用身份权限 `base:record:create`、`base:record:retrieve`、`base:field:read`，并获得目标多维表格的必要文档权限。启用高级权限时须确认可管理/搜索范围，避免查询已有提交时返回不完整记录。
 3. 目标数据表已由用户增加文本字段“网站提交唯一标识”，ID 为 `fldAVl0ahk`，配置 `FEISHU_SUBMISSION_ID_FIELD`。该字段不复用任何问卷答案字段。
 4. 依 `.env.example` 在 Vercel 中配置机密和非机密环境变量。机密不要填写到 Git 仓库、MDX、公开变量或日志中。`RECEIPT_SIGNING_SECRET`、`CRON_SECRET` 使用不同的随机值，至少 32 字符。
 5. 设置明确时区的 `APPLICATION_DEADLINE`，例如 ISO 8601 带 `+08:00` 或 `Z` 的时间；为空表示不设置截止。`APPLICATIONS_OPEN` 默认关闭，只有完整接入验收后设为 `true`。
-6. 在测试表实际提交三语申请，验证相同字段、相同选项、排序存储、重复点击、飞书暂时故障恢复和截止后已有回执查询。
+6. 在测试表实际提交三语申请，验证相同字段、相同选项、多选存储、重复点击、飞书暂时故障恢复和截止后已有回执查询。
 7. 确认原文内容和部署环境后发布生产版本。不要通过网页“提交成功”的字样代替飞书真实记录核对。
 
-本次开发已建立新加坡区 Neon 免费预览数据库并执行 SQL，配置了 Preview 环境变量。用户已开通应用权限并修复文档级写权限。真实 Vercel 接口已将测试申请 `4ce7b19c-a6a1-4a29-ab53-057bf30a3231` 从暂存恢复并写入现有飞书表，记录 ID 为 `reczz28NCSjEQYEo`；队伍名称明确标注“【网站联调测试，请忽略】三语申请接口验证”。重复请求继续返回同一回执。当前生产环境保持原站点，生产数据库与正式收集开关尚未配置。
+本次开发已建立新加坡区 Neon 免费预览数据库并执行 SQL，配置了 Preview 环境变量。用户已开通应用权限并修复文档级写权限。真实 Vercel 接口已将测试申请 `4ce7b19c-a6a1-4a29-ab53-057bf30a3231` 从暂存恢复并写入现有飞书表，记录 ID 为 `reczz28NCSjEQYEo`；队伍名称明确标注“【网站联调测试，请忽略】三语申请接口验证”。重复请求继续返回同一回执。用户已授权发布；独立免费生产数据库 `nice-frc-applications-production` 已初始化，生产环境变量及正式收集开关已配置，等待部署与正式域名验收。Preview 已恢复关闭正式提交。
 
 ## 接口与数据
 

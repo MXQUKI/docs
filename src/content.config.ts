@@ -9,6 +9,7 @@ export const collections = {
 		schema: docsSchema({
 			extend: z.object({
 				icon: z.string().optional(),
+				titleAction: z.object({ label: z.string(), href: z.string() }).optional(),
 			}),
 		}),
 	}),

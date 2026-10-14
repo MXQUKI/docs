@@ -1,14 +1,17 @@
 ---
 import NiceIcon from './NiceIcon.astro';
 
-const { title, icon } = Astro.locals.starlightRoute.entry.data;
+const { title, icon, titleAction } = Astro.locals.starlightRoute.entry.data;
 const pageTitleId = '_top';
 ---
 
-<h1 id={pageTitleId}>
-	{icon && <NiceIcon class="nice-title-icon" name={icon} size="3rem" strokeWidth="1.6" />}
-	<span>{title}</span>
-</h1>
+<div class:list={['nice-title-row', { 'has-action': titleAction }]}>
+	<h1 id={pageTitleId}>
+		{icon && <NiceIcon class="nice-title-icon" name={icon} size="3rem" strokeWidth="1.6" />}
+		<span>{title}</span>
+	</h1>
+	{titleAction && <a class="nice-title-action inline-flex items-center justify-center rounded-md bg-[#d94700] px-4 py-3 text-sm font-semibold text-white no-underline transition-colors hover:bg-[#b53b00] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d94700]" href={titleAction.href}>{titleAction.label}</a>}
+</div>
 
 <style>
 	@layer starlight.core {
@@ -25,6 +28,21 @@ const pageTitleId = '_top';
 
 		.nice-title-icon {
 			color: #9d7c72;
+		}
+		.has-action {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 1rem;
+			margin-top: 1rem;
+		}
+		.has-action h1 { margin: 0; min-width: 0; }
+		.nice-title-action { flex-shrink: 0; white-space: nowrap; color: white; }
+		@media (max-width: 40rem) {
+			.has-action { gap: .5rem; }
+			.has-action h1 { font-size: 1.6rem; gap: .4rem; }
+			.has-action :global(.nice-title-icon) { width: 1.8rem; height: 1.8rem; }
+			.nice-title-action { font-size: .75rem; padding: .65rem .75rem; }
 		}
 	}
 </style>
