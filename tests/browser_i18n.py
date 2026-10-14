@@ -48,7 +48,7 @@ for page_id, status in STATUS.items():
                 if parsed.fragment:
                     target_ids = {x.get('id') for _, x in Tags(target.read_text()).tags}
                     assert unquote(parsed.fragment) in target_ids, (path, href, 'broken section link')
-print('Static audit: all 48 pages, resources, internal links, anchors, canonical and hreflang passed.', flush=True)
+print(f'Static audit: all {len(STATUS) * len(PREFIX)} pages, resources, internal links, anchors, canonical and hreflang passed.', flush=True)
 
 with sync_playwright() as p:
     browser = p.chromium.launch(channel=os.environ.get('NICE_BROWSER_CHANNEL', 'chrome'), headless=True)

@@ -1,0 +1,38 @@
+---
+import { copy } from '../../forms/frc';
+import { splitPath } from '../../i18n/locales';
+const { locale } = splitPath(Astro.url.pathname);
+const text = copy[locale];
+---
+
+<section class="nice-application not-content" data-application data-locale={locale} aria-label={text.label}>
+  <p data-application-message role="status" aria-live="polite" tabindex="-1">{text.loading}</p>
+  <p data-application-receipt hidden></p>
+  <div data-application-survey></div>
+  <div class="flex flex-wrap gap-3 pt-4">
+    <button type="button" data-application-retry hidden>{text.retry}</button>
+    <button type="button" data-application-status hidden>{text.checkStatus}</button>
+    <button type="button" data-application-back hidden>{text.back}</button>
+    <button type="button" data-application-clear hidden>{text.clear}</button>
+  </div>
+  <p class="pt-5 text-sm" data-application-notice>{text.submitNote}</p>
+  <p class="pt-2 text-sm opacity-80">{text.privacy}</p>
+  <noscript>{text.javascript}</noscript>
+</section>
+
+<script>
+  import '../../forms/client';
+</script>
+
+<style>
+  .nice-application { --sjs-primary-backcolor: #d94700; --sjs-primary-forecolor: white; --sjs-font-family: inherit; min-width: 0; }
+  .nice-application > [role='status'] { padding: 0.8rem 1rem; border-inline-start: 3px solid #fc5000; background: var(--sl-color-gray-6); border-radius: .35rem; }
+  button { border: 1px solid var(--sl-color-gray-4); border-radius: .4rem; padding: .65rem 1rem; background: var(--sl-color-gray-6); cursor: pointer; font: inherit; }
+  button:focus-visible { outline: 2px solid #fc5000; outline-offset: 3px; }
+  [hidden] { display: none !important; }
+  .nice-application :global(.sd-root-modern) { font-family: inherit; }
+  .nice-application :global(.sd-body) { min-width: 0; }
+  .nice-application :global(.sd-question__title) { overflow-wrap: anywhere; }
+  .nice-application :global(.sd-progress-buttons__list-container) { max-width: 100%; }
+  @media (max-width: 50rem) { .nice-application { --sjs-base-unit: 6px; } }
+</style>

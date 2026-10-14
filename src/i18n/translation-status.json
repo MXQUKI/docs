@@ -147,10 +147,10 @@
     }
   },
   "index": {
-    "sourceHash": "5890d2cd11a569dd6bd086117f740504e6c082d9c03f7c1c8091ce02051b5fd8",
+    "sourceHash": "0ec13278abe4f6b62c99dd693a29ce006e18b519988755080191df5b59a20b76",
     "translationHashes": {
-      "zh-Hant": "93d32675132c220cec7e7128429ff012d4d26b34076f5e7bded0d6630cbe8a96",
-      "en": "b432b79d3eca4862354b20dc5ad519b1e62fdea980a67a41106fa569dab37272"
+      "zh-Hant": "4c7f81a1165f0b61a1ba23c7a0f60407c060c03420d04908a1e707f20e9bbd01",
+      "en": "b9543776dac954921cd45156532949cc1db0c67b14ea92d407e1923e11f966ef"
     },
     "anchors": {
       "zh-CN": [
@@ -459,6 +459,18 @@
         "3-plastic-core-silicone-wheels",
         "4-plastic-core-silicone-wheels"
       ]
+    }
+  },
+  "team-nice/frc-2027": {
+    "sourceHash": "f5832a402c7846f67c5f862858a9b9667081f71bf399d279007fec464193dfa6",
+    "translationHashes": {
+      "zh-Hant": "c0ad099398e2f56ab6a6e7c2cb631d68442782655e4bd44733111ca7dda408ba",
+      "en": "60af7ad31e35975c91a40d1391689db9c17c2cf3d6e41ec9d923012e572c21cc"
+    },
+    "anchors": {
+      "zh-CN": [],
+      "zh-Hant": [],
+      "en": []
     }
   }
 }

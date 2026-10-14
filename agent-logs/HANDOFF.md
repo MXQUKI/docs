@@ -1,5 +1,24 @@
 # Handoff
 
+更新时间：2026-10-14 09:01:36 +02:00
+
+## Team NICE 三语官网申请页（预览已部署，生产未发布）
+
+- 分支 `codex/frc-trilingual-application`，基于原 `main` 的 `b671d35`。保留 Astro + Starlight 静态输出，新增 SurveyJS 问卷与独立 Node.js Vercel Functions。
+- 页面：`/team-nice/frc-2027/`、`/zh-hant/team-nice/frc-2027/`、`/en/team-nice/frc-2027/`；三语首页新增文本入口，不新增无产品预览图的卡片。
+- 用户最终指定**以当前飞书问卷为唯一内容和逻辑基准**，不再采用原来的 39 题 Wiki 快照。已经读取并逐项核对 40 个主问题，另接入 4 个“其他”补充字段。选购因素为多选而非排序；新增了赛季消费金额题，联系人身份和产品选项使用最新版。
+- `src/content/docs/_data/frc-2027.json` 保存三语题目和原始 `sourceRule`；前后端分别从该规则生成/计算显隐，服务器清除隐藏答案后只校验有效题目。未额外添加“其他项目/未授权不能提交”的拒绝规则。三个声明组按原说明全部勾选。
+- 台湾本地化采用“送出申請、聯絡人、電子郵件、志工、社群媒體、抵用券、矽膠、螺帽、3D 列印”等；保留人民币金额及原政策。切换网站语言通过共享 sessionStorage 草稿恢复答案和进度；存储禁用时阻止带答案跳转以避免丢失，并明确提示。
+- 后端使用 Neon 持久化暂存、原子幂等键/任务租约、同源校验/限流、飞书记录 API `client_token`、异常重试/对账及回执鉴权。同步成功 24 小时后清除暂存正文。详见 `agent-logs/APPLICATIONS.md`。
+- 已在 NI Corporate 创建并连接**免费**的新加坡区 Neon `nice-frc-applications-preview`，仅 Preview 环境，已执行 `db/applications.sql`。用户自行配置飞书 App Secret；机密只在 Vercel/.gitignore 排除的本地文件中，未提交仓库。
+- 用户新增飞书文本字段“网站提交唯一标识”=`fldAVl0ahk`。应用 `cli_aacde17526f85bd1` 已开通权限并修复文档级权限。
+- 真实 Vercel→Neon→飞书联调成功：同一申请 `4ce7b19c-a6a1-4a29-ab53-057bf30a3231` 从 `91403` 暂存失败恢复为 `synced`；飞书只有一条记录 `reczz28NCSjEQYEo`，明确标注“【网站联调测试，请忽略】三语申请接口验证”。重放请求保持同一记录，带凭证的状态接口确认成功。测试记录保留供核对，未擅自删除。
+- 最新预览：`https://docs-950bmsec7-ni-corporate.vercel.app`，部署 `dpl_HHVDGiEqUENm5Mfh1fFNMT9YzUbD` READY。Preview 已重新关闭正式提交，只提供标注清楚的演示填写；生产域名和 main 未改变。生产数据库、生产密钥和收集开关需上线时独立配置。
+- 验证通过：40题源一致性检查；content/i18n lint；7项原语言/API测试；8项申请单测（含所有语言/分支组合）；Astro check 0 errors/warnings/hints；build；12组申请页面设备/主题检查及显隐/恢复/提交/回执浏览器测试。原站点三语导航、搜索、桌面/手机、深浅模式回归已完成一轮。
+- 运行提示：既有 Astro markdown/404 构建提示仍在，申请页 SurveyJS 包有较大 chunk 提示（仅申请页加载）。安装审计提示现有 Astro/Sharp 等框架和传递依赖存在安全公告，未在该功能中做大版本框架升级；生产发布前应单独评估。
+
+---
+
 更新时间：2026-10-13 15:12:14+08:00
 
 ## 三语产品文档（已发布并完成生产验收）

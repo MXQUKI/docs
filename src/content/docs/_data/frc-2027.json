@@ -1,0 +1,2209 @@
+{
+  "version": "frc-2027-live-20261014-v2",
+  "source": "https://nicerobotics.feishu.cn/base/Kmd0bV9EpahVlQsnva0cdkvznlc?table=tbldKoVs7vP53jhi&view=vewwEbp2HV",
+  "questions": [
+    {
+      "id": "q1",
+      "fieldId": "fld6nqvK9u",
+      "fieldName": "您参加的项目是：",
+      "type": "radiogroup",
+      "required": true,
+      "group": 0,
+      "title": {
+        "zh-CN": "您参加的项目是：",
+        "zh-Hant": "您參加的競賽項目是：",
+        "en": "Which competition program do you participate in?"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "value": "FRC",
+          "text": {
+            "zh-CN": "FRC",
+            "zh-Hant": "FRC",
+            "en": "FRC"
+          }
+        },
+        {
+          "value": "其他",
+          "text": {
+            "zh-CN": "其他",
+            "zh-Hant": "其他",
+            "en": "Other"
+          }
+        }
+      ],
+      "sourceRule": null
+    },
+    {
+      "id": "q2",
+      "fieldId": "fldd8soN3c",
+      "fieldName": "队伍是否拥有正式或正在申请的FRC Team Number？",
+      "type": "radiogroup",
+      "required": true,
+      "group": 0,
+      "title": {
+        "zh-CN": "队伍是否拥有正式或正在申请的FRC Team Number？",
+        "zh-Hant": "隊伍是否擁有正式或正在申請的 FRC Team Number？",
+        "en": "Does your team have an official FRC Team Number, or is registration in progress?"
+      },
+      "description": {
+        "zh-CN": "正式注册队伍和正在筹备2027赛季注册的队伍均可提交申请，但入选后可能需要提供注册证明。",
+        "zh-Hant": "正式註冊隊伍和正在籌備 2027 賽季註冊的隊伍均可送出申請，但入選後可能需要提供註冊證明。",
+        "en": "Registered teams and teams preparing to register for the 2027 season may apply. Selected teams may need to provide proof of registration."
+      },
+      "choices": [
+        {
+          "value": "是，已经拥有正式Team Number",
+          "text": {
+            "zh-CN": "是，已经拥有正式Team Number",
+            "zh-Hant": "是，已經擁有正式 Team Number",
+            "en": "Yes, we have an official Team Number"
+          }
+        },
+        {
+          "value": "正在完成FIRST注册",
+          "text": {
+            "zh-CN": "正在完成FIRST注册",
+            "zh-Hant": "正在完成 FIRST 註冊",
+            "en": "FIRST registration is in progress"
+          }
+        },
+        {
+          "value": "否",
+          "text": {
+            "zh-CN": "否",
+            "zh-Hant": "否",
+            "en": "No"
+          }
+        }
+      ],
+      "sourceRule": {
+        "conditions": [
+          [
+            "您参加的项目是：",
+            "==",
+            [
+              "FRC"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q3",
+      "fieldId": "fld9ch7XXX",
+      "fieldName": "FRC Team Number",
+      "type": "text",
+      "required": true,
+      "group": 0,
+      "title": {
+        "zh-CN": "FRC Team Number",
+        "zh-Hant": "FRC Team Number",
+        "en": "FRC Team Number"
+      },
+      "description": {
+        "zh-CN": "数字填空。正在注册的队伍可填写临时编号或“Pending”。",
+        "zh-Hant": "正在註冊的隊伍可填寫臨時編號或「Pending」。",
+        "en": "Teams in the registration process may enter a temporary number or “Pending”."
+      },
+      "sourceRule": {
+        "conditions": [
+          [
+            "您参加的项目是：",
+            "==",
+            [
+              "FRC"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q4",
+      "fieldId": "fld1HJT88a",
+      "fieldName": "队伍是否授权您代表团队提交本次申请？",
+      "type": "radiogroup",
+      "required": true,
+      "group": 0,
+      "title": {
+        "zh-CN": "队伍是否授权您代表团队提交本次申请？",
+        "zh-Hant": "隊伍是否授權您代表團隊送出本次申請？",
+        "en": "Has your team authorized you to submit this application?"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "value": "是",
+          "text": {
+            "zh-CN": "是",
+            "zh-Hant": "是",
+            "en": "Yes"
+          }
+        },
+        {
+          "value": "否",
+          "text": {
+            "zh-CN": "否",
+            "zh-Hant": "否",
+            "en": "No"
+          }
+        }
+      ],
+      "sourceRule": {
+        "conditions": [
+          [
+            "您参加的项目是：",
+            "==",
+            [
+              "FRC"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q5",
+      "fieldId": "fldsIqdeHZ",
+      "fieldName": "队伍是否正在接受其他FRC零部件供应商的产品或代金券赞助？",
+      "type": "radiogroup",
+      "required": true,
+      "group": 0,
+      "title": {
+        "zh-CN": "队伍是否正在接受其他FRC零部件供应商的产品或代金券赞助？",
+        "zh-Hant": "隊伍是否正在接受其他 FRC 零組件供應商的產品或抵用券贊助？",
+        "en": "Is your team receiving product or voucher sponsorship from another FRC component supplier?"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "value": "是",
+          "text": {
+            "zh-CN": "是",
+            "zh-Hant": "是",
+            "en": "Yes"
+          }
+        },
+        {
+          "value": "否",
+          "text": {
+            "zh-CN": "否",
+            "zh-Hant": "否",
+            "en": "No"
+          }
+        },
+        {
+          "value": "正在申请，但尚未确认",
+          "text": {
+            "zh-CN": "正在申请，但尚未确认",
+            "zh-Hant": "正在申請，但尚未確認",
+            "en": "Applied, but not yet confirmed"
+          }
+        },
+        {
+          "value": "不确定",
+          "text": {
+            "zh-CN": "不确定",
+            "zh-Hant": "不確定",
+            "en": "Not sure"
+          }
+        }
+      ],
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q6",
+      "fieldId": "fldbm52mvO",
+      "fieldName": "如有，请填写相关品牌及合作内容。",
+      "type": "comment",
+      "required": false,
+      "group": 0,
+      "title": {
+        "zh-CN": "如有，请填写相关品牌及合作内容。",
+        "zh-Hant": "如有，請填寫相關品牌及合作內容。",
+        "en": "If applicable, list the brands and describe the partnerships."
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否正在接受其他FRC零部件供应商的产品或代金券赞助？",
+            "!=",
+            [
+              "否"
+            ]
+          ],
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q7",
+      "fieldId": "fldZ8qpkrb",
+      "fieldName": "队伍名称",
+      "type": "text",
+      "required": true,
+      "group": 1,
+      "title": {
+        "zh-CN": "队伍名称",
+        "zh-Hant": "隊伍名稱",
+        "en": "Team name"
+      },
+      "description": {
+        "zh-CN": "请填写正式英文名称及常用中文名称。",
+        "zh-Hant": "請填寫正式英文名稱及常用中文名稱。",
+        "en": "Enter the official English name and the commonly used Chinese name, if applicable."
+      },
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q8",
+      "fieldId": "fldioHSJfE",
+      "fieldName": "所在国家或地区",
+      "type": "comment",
+      "required": true,
+      "group": 1,
+      "title": {
+        "zh-CN": "所在国家或地区",
+        "zh-Hant": "所在國家或地區",
+        "en": "Country or region"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q9",
+      "fieldId": "fldEsVHViw",
+      "fieldName": "所在城市",
+      "type": "text",
+      "required": true,
+      "group": 1,
+      "title": {
+        "zh-CN": "所在城市",
+        "zh-Hant": "所在城市",
+        "en": "City"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q10",
+      "fieldId": "fldimFqHs9",
+      "fieldName": "所属学校、机构或社区组织",
+      "type": "text",
+      "required": true,
+      "group": 1,
+      "title": {
+        "zh-CN": "所属学校、机构或社区组织",
+        "zh-Hant": "所屬學校、機構或社區組織",
+        "en": "School, institution, or community organization"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q11",
+      "fieldId": "fldg0UnUzl",
+      "fieldName": "队伍成立年份",
+      "type": "number",
+      "required": true,
+      "group": 1,
+      "title": {
+        "zh-CN": "队伍成立年份",
+        "zh-Hant": "隊伍成立年份",
+        "en": "Year the team was founded"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q12",
+      "fieldId": "fld66O0dEK",
+      "fieldName": "队伍类型",
+      "type": "radiogroup",
+      "required": true,
+      "group": 1,
+      "title": {
+        "zh-CN": "队伍类型",
+        "zh-Hant": "隊伍類型",
+        "en": "Team type"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "value": "学校队伍",
+          "text": {
+            "zh-CN": "学校队伍",
+            "zh-Hant": "學校隊伍",
+            "en": "School team"
+          }
+        },
+        {
+          "value": "多校联合队伍",
+          "text": {
+            "zh-CN": "多校联合队伍",
+            "zh-Hant": "跨校聯合隊伍",
+            "en": "Multi-school team"
+          }
+        },
+        {
+          "value": "社区队伍",
+          "text": {
+            "zh-CN": "社区队伍",
+            "zh-Hant": "社區隊伍",
+            "en": "Community team"
+          }
+        },
+        {
+          "value": "教育机构队伍",
+          "text": {
+            "zh-CN": "教育机构队伍",
+            "zh-Hant": "教育機構隊伍",
+            "en": "Educational institution team"
+          }
+        },
+        {
+          "value": "独立非营利组织队伍",
+          "text": {
+            "zh-CN": "独立非营利组织队伍",
+            "zh-Hant": "獨立非營利組織隊伍",
+            "en": "Independent nonprofit team"
+          }
+        },
+        {
+          "value": "其他",
+          "text": {
+            "zh-CN": "其他",
+            "zh-Hant": "其他",
+            "en": "Other"
+          }
+        }
+      ],
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q13",
+      "fieldId": "fldaZhQ0Lu",
+      "fieldName": "2027赛季预计导师及成年志愿者人数",
+      "type": "number",
+      "required": true,
+      "group": 1,
+      "title": {
+        "zh-CN": "2027赛季预计导师及成年志愿者人数",
+        "zh-Hant": "2027 賽季預計導師及成年志工人數",
+        "en": "Expected number of mentors and adult volunteers for the 2027 season"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q14",
+      "fieldId": "fldCwtXylc",
+      "fieldName": "队伍官方网站",
+      "type": "text",
+      "required": false,
+      "group": 1,
+      "title": {
+        "zh-CN": "队伍官方网站",
+        "zh-Hant": "隊伍官方網站",
+        "en": "Official team website"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q15",
+      "fieldId": "fldAPjFB6n",
+      "fieldName": "队伍社交媒体账号",
+      "type": "text",
+      "required": false,
+      "group": 1,
+      "title": {
+        "zh-CN": "队伍社交媒体账号",
+        "zh-Hant": "隊伍社群媒體帳號",
+        "en": "Team social media accounts"
+      },
+      "description": {
+        "zh-CN": "可填写：微信公众号、Bilibili、小红书、抖音、Instagram、YouTube、Facebook、LinkedIn、其他。",
+        "zh-Hant": "選填。可填寫：微信公眾號、Bilibili、小紅書、抖音、Instagram、YouTube、Facebook、LinkedIn、其他。",
+        "en": "Optional. List accounts for WeChat Official Account, Bilibili, Xiaohongshu, Douyin, Instagram, YouTube, Facebook, LinkedIn, or other platforms."
+      },
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q16",
+      "fieldId": "fldd8QDhoJ",
+      "fieldName": "主要联系人姓名",
+      "type": "text",
+      "required": true,
+      "group": 2,
+      "title": {
+        "zh-CN": "主要联系人姓名",
+        "zh-Hant": "主要聯絡人姓名",
+        "en": "Primary contact's name"
+      },
+      "description": {
+        "zh-CN": "建议主要联系人为年满18岁的指导老师或队长。",
+        "zh-Hant": "建議由年滿 18 歲的指導老師或隊長擔任主要聯絡人。",
+        "en": "The primary contact should preferably be a teacher or team captain aged 18 or older."
+      },
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q17",
+      "fieldId": "flddJzrY22",
+      "fieldName": "主要联系人身份",
+      "type": "radiogroup",
+      "required": true,
+      "group": 2,
+      "title": {
+        "zh-CN": "主要联系人身份",
+        "zh-Hant": "主要聯絡人身分",
+        "en": "Primary contact's role"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "value": "队伍领队",
+          "text": {
+            "zh-CN": "队伍领队",
+            "zh-Hant": "隊伍領隊",
+            "en": "Team leader"
+          }
+        },
+        {
+          "value": "指导老师",
+          "text": {
+            "zh-CN": "指导老师",
+            "zh-Hant": "指導老師",
+            "en": "Teacher"
+          }
+        },
+        {
+          "value": "校方管理人员",
+          "text": {
+            "zh-CN": "校方管理人员",
+            "zh-Hant": "校方管理人員",
+            "en": "School administrator"
+          }
+        },
+        {
+          "value": "青年导师（大学在读）",
+          "text": {
+            "zh-CN": "青年导师（大学在读）",
+            "zh-Hant": "青年導師（大學在學）",
+            "en": "Young mentor (currently enrolled in university)"
+          }
+        },
+        {
+          "value": "校友",
+          "text": {
+            "zh-CN": "校友",
+            "zh-Hant": "校友",
+            "en": "Alumnus/alumna"
+          }
+        },
+        {
+          "value": "学生队长",
+          "text": {
+            "zh-CN": "学生队长",
+            "zh-Hant": "學生隊長",
+            "en": "Student captain"
+          }
+        },
+        {
+          "value": "队员",
+          "text": {
+            "zh-CN": "队员",
+            "zh-Hant": "隊員",
+            "en": "Team member"
+          }
+        },
+        {
+          "value": "其他",
+          "text": {
+            "zh-CN": "其他",
+            "zh-Hant": "其他",
+            "en": "Other"
+          }
+        }
+      ],
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q17other",
+      "fieldId": "fldComVzk4",
+      "fieldName": "主要联系人身份-其他-补充内容",
+      "type": "text",
+      "required": false,
+      "group": 2,
+      "otherFor": "q17",
+      "title": {
+        "zh-CN": "其他（请说明）",
+        "zh-Hant": "其他身分（請說明）",
+        "en": "Other role (please specify)"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "q18",
+      "fieldId": "fldMGpfEfN",
+      "fieldName": "主要联系人电子邮箱",
+      "type": "text",
+      "required": true,
+      "group": 2,
+      "title": {
+        "zh-CN": "主要联系人电子邮箱",
+        "zh-Hant": "主要聯絡人電子郵件",
+        "en": "Primary contact's email"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q19",
+      "fieldId": "fldULFutiT",
+      "fieldName": "主要联系人电话或微信",
+      "type": "text",
+      "required": true,
+      "group": 2,
+      "title": {
+        "zh-CN": "主要联系人电话或微信",
+        "zh-Hant": "主要聯絡人電話或微信",
+        "en": "Primary contact's phone number or WeChat ID"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q20",
+      "fieldId": "fld7KHFMb4",
+      "fieldName": "备用联系人姓名",
+      "type": "text",
+      "required": false,
+      "group": 2,
+      "title": {
+        "zh-CN": "备用联系人姓名",
+        "zh-Hant": "備用聯絡人姓名",
+        "en": "Backup contact's name"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q21",
+      "fieldId": "fldxeoGmWt",
+      "fieldName": "备用联系人邮箱或电话",
+      "type": "text",
+      "required": false,
+      "group": 2,
+      "title": {
+        "zh-CN": "备用联系人邮箱或电话",
+        "zh-Hant": "備用聯絡人電子郵件或電話",
+        "en": "Backup contact's email or phone number"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q22",
+      "fieldId": "fldfmZIolM",
+      "fieldName": "请简要介绍您的FRC队伍。",
+      "type": "comment",
+      "required": true,
+      "group": 3,
+      "title": {
+        "zh-CN": "请简要介绍您的FRC队伍。",
+        "zh-Hant": "請簡要介紹您的 FRC 隊伍。",
+        "en": "Please briefly introduce your FRC team."
+      },
+      "description": {
+        "zh-CN": "建议100—400字。可包括：队伍成立背景；队伍使命或文化；学生成员构成；主要技术方向；团队特色。",
+        "zh-Hant": "建議 100–400 字。可包括：隊伍成立背景、隊伍使命或文化、學生成員組成、主要技術方向、團隊特色。",
+        "en": "Suggested length for a Chinese response: 100–400 characters. Include your team's background, mission or culture, student membership, technical focus, and distinctive strengths. You may answer in English."
+      },
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q23",
+      "fieldId": "fldWeXCmLZ",
+      "fieldName": "队伍目前面临的最大困难是什么？",
+      "type": "checkbox",
+      "required": true,
+      "group": 3,
+      "title": {
+        "zh-CN": "队伍目前面临的最大困难是什么？",
+        "zh-Hant": "隊伍目前面臨的最大困難是什麼？",
+        "en": "What are the biggest challenges your team currently faces?"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "value": "经费不足",
+          "text": {
+            "zh-CN": "经费不足",
+            "zh-Hant": "經費不足",
+            "en": "Insufficient funding"
+          }
+        },
+        {
+          "value": "零部件采购困难",
+          "text": {
+            "zh-CN": "零部件采购困难",
+            "zh-Hant": "零組件採購困難",
+            "en": "Difficulty sourcing components"
+          }
+        },
+        {
+          "value": "加工制造资源不足",
+          "text": {
+            "zh-CN": "加工制造资源不足",
+            "zh-Hant": "加工製造資源不足",
+            "en": "Limited manufacturing resources"
+          }
+        },
+        {
+          "value": "技术经验不足",
+          "text": {
+            "zh-CN": "技术经验不足",
+            "zh-Hant": "技術經驗不足",
+            "en": "Limited technical experience"
+          }
+        },
+        {
+          "value": "导师资源不足",
+          "text": {
+            "zh-CN": "导师资源不足",
+            "zh-Hant": "導師資源不足",
+            "en": "Limited mentor support"
+          }
+        },
+        {
+          "value": "学生成员招募与传承",
+          "text": {
+            "zh-CN": "学生成员招募与传承",
+            "zh-Hant": "學生成員招募與傳承",
+            "en": "Student recruitment and knowledge transfer"
+          }
+        },
+        {
+          "value": "比赛经验不足",
+          "text": {
+            "zh-CN": "比赛经验不足",
+            "zh-Hant": "比賽經驗不足",
+            "en": "Limited competition experience"
+          }
+        },
+        {
+          "value": "国际物流或供应链问题",
+          "text": {
+            "zh-CN": "国际物流或供应链问题",
+            "zh-Hant": "國際物流或供應鏈問題",
+            "en": "International shipping or supply chain issues"
+          }
+        },
+        {
+          "value": "社区资源有限",
+          "text": {
+            "zh-CN": "社区资源有限",
+            "zh-Hant": "社區資源有限",
+            "en": "Limited community resources"
+          }
+        },
+        {
+          "value": "其他",
+          "text": {
+            "zh-CN": "其他",
+            "zh-Hant": "其他",
+            "en": "Other"
+          }
+        }
+      ],
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q23other",
+      "fieldId": "fld5cDDaBb",
+      "fieldName": "队伍目前面临的最大困难是什么？-其他-补充内容",
+      "type": "text",
+      "required": false,
+      "group": 3,
+      "otherFor": "q23",
+      "title": {
+        "zh-CN": "其他（请说明）",
+        "zh-Hant": "其他困難（請說明）",
+        "en": "Other challenges (please specify)"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "q24",
+      "fieldId": "fldSoxJ710",
+      "fieldName": "困难影响说明",
+      "type": "comment",
+      "required": true,
+      "group": 3,
+      "title": {
+        "zh-CN": "困难影响说明",
+        "zh-Hant": "困難影響說明",
+        "en": "How do these challenges affect your team?"
+      },
+      "description": {
+        "zh-CN": "请补充说明困难如何影响队伍发展。",
+        "zh-Hant": "請補充說明困難如何影響隊伍發展。",
+        "en": "Please explain how the challenges affect your team's development."
+      },
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q25",
+      "fieldId": "fldAc09uNT",
+      "fieldName": "队伍过去是否购买或使用过NICE Robotics产品？",
+      "type": "radiogroup",
+      "required": true,
+      "group": 4,
+      "title": {
+        "zh-CN": "队伍过去是否购买或使用过NICE Robotics产品？",
+        "zh-Hant": "隊伍過去是否購買或使用過 NICE Robotics 產品？",
+        "en": "Has your team purchased or used NICE Robotics products?"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "value": "经常使用",
+          "text": {
+            "zh-CN": "经常使用",
+            "zh-Hant": "經常使用",
+            "en": "We use them regularly"
+          }
+        },
+        {
+          "value": "使用过少量产品",
+          "text": {
+            "zh-CN": "使用过少量产品",
+            "zh-Hant": "使用過少量產品",
+            "en": "We have used a few products"
+          }
+        },
+        {
+          "value": "了解过，但尚未购买",
+          "text": {
+            "zh-CN": "了解过，但尚未购买",
+            "zh-Hant": "了解過，但尚未購買",
+            "en": "We are familiar with them but have not purchased any"
+          }
+        },
+        {
+          "value": "第一次了解NICE Robotics",
+          "text": {
+            "zh-CN": "第一次了解NICE Robotics",
+            "zh-Hant": "第一次了解 NICE Robotics",
+            "en": "This is our first introduction to NICE Robotics"
+          }
+        }
+      ],
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q40",
+      "fieldId": "fldfrxrbLI",
+      "group": 4,
+      "type": "text",
+      "required": true,
+      "title": {
+        "zh-CN": "过去一个赛季在NICE Robotics消费的金额大约是？",
+        "zh-Hant": "過去一個賽季，隊伍在 NICE Robotics 的消費金額大約是多少？",
+        "en": "Approximately how much did your team spend at NICE Robotics during the past season?"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "fieldName": "过去一个赛季在NICE Robotics消费的金额大约是？",
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ],
+          [
+            "队伍过去是否购买或使用过NICE Robotics产品？",
+            "intersects",
+            [
+              "经常使用",
+              "使用过少量产品"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q26",
+      "fieldId": "fldak2WY3J",
+      "fieldName": "队伍过去使用过哪些NICE Robotics产品？",
+      "type": "checkbox",
+      "required": true,
+      "group": 4,
+      "title": {
+        "zh-CN": "队伍过去使用过哪些NICE Robotics产品？",
+        "zh-Hant": "隊伍過去使用過哪些 NICE Robotics 產品？",
+        "en": "Which NICE Robotics products has your team used?"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "value": "齿轮",
+          "text": {
+            "zh-CN": "齿轮",
+            "zh-Hant": "齒輪",
+            "en": "Gears"
+          }
+        },
+        {
+          "value": "镂空齿轮",
+          "text": {
+            "zh-CN": "镂空齿轮",
+            "zh-Hant": "減重凹槽齒輪",
+            "en": "Pocketed Gears"
+          }
+        },
+        {
+          "value": "链轮",
+          "text": {
+            "zh-CN": "链轮",
+            "zh-Hant": "鏈輪",
+            "en": "Sprockets"
+          }
+        },
+        {
+          "value": "链条张紧器",
+          "text": {
+            "zh-CN": "链条张紧器",
+            "zh-Hant": "鏈條張緊器",
+            "en": "Chain Tensioners"
+          }
+        },
+        {
+          "value": "六角轴",
+          "text": {
+            "zh-CN": "六角轴",
+            "zh-Hant": "六角軸",
+            "en": "Hex Shafts"
+          }
+        },
+        {
+          "value": "黄铜飞轮",
+          "text": {
+            "zh-CN": "黄铜飞轮",
+            "zh-Hant": "黃銅飛輪",
+            "en": "Brass Flywheels"
+          }
+        },
+        {
+          "value": "Stub Roller",
+          "text": {
+            "zh-CN": "Stub Roller",
+            "zh-Hant": "Stub Roller",
+            "en": "Stub Roller"
+          }
+        },
+        {
+          "value": "硅胶轮",
+          "text": {
+            "zh-CN": "硅胶轮",
+            "zh-Hant": "矽膠輪",
+            "en": "Silicone Wheels"
+          }
+        },
+        {
+          "value": "硅胶套",
+          "text": {
+            "zh-CN": "硅胶套",
+            "zh-Hant": "矽膠套",
+            "en": "Silicone Sleeves"
+          }
+        },
+        {
+          "value": "硅胶防滑胶带",
+          "text": {
+            "zh-CN": "硅胶防滑胶带",
+            "zh-Hant": "矽膠防滑膠帶",
+            "en": "Silicone Grip Tape"
+          }
+        },
+        {
+          "value": "方管塞或Tube Plug",
+          "text": {
+            "zh-CN": "方管塞或Tube Plug",
+            "zh-Hant": "方管連接塞或 Tube Plug",
+            "en": "Tube Plugs"
+          }
+        },
+        {
+          "value": "螺母条",
+          "text": {
+            "zh-CN": "螺母条",
+            "zh-Hant": "螺帽條",
+            "en": "Nut Strips"
+          }
+        },
+        {
+          "value": "3D打印Insert",
+          "text": {
+            "zh-CN": "3D打印Insert",
+            "zh-Hant": "3D 列印嵌入件",
+            "en": "3D Printing Inserts"
+          }
+        },
+        {
+          "value": "SplineXS转六角适配器",
+          "text": {
+            "zh-CN": "SplineXS转六角适配器",
+            "zh-Hant": "SplineXS 轉六角轉接套",
+            "en": "SplineXS-to-Hex Adapters"
+          }
+        },
+        {
+          "value": "阵列管",
+          "text": {
+            "zh-CN": "阵列管",
+            "zh-Hant": "陣列管",
+            "en": "Pre-Drilled Tubing"
+          }
+        },
+        {
+          "value": "其他",
+          "text": {
+            "zh-CN": "其他",
+            "zh-Hant": "其他",
+            "en": "Other"
+          }
+        }
+      ],
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍过去是否购买或使用过NICE Robotics产品？",
+            "==",
+            [
+              "经常使用"
+            ]
+          ],
+          [
+            "队伍过去是否购买或使用过NICE Robotics产品？",
+            "==",
+            [
+              "使用过少量产品"
+            ]
+          ]
+        ],
+        "logic": "or"
+      }
+    },
+    {
+      "id": "q26other",
+      "fieldId": "fldhBVFGUa",
+      "fieldName": "队伍过去使用过哪些NICE Robotics产品？-其他-补充内容",
+      "type": "text",
+      "required": false,
+      "group": 4,
+      "otherFor": "q26",
+      "title": {
+        "zh-CN": "其他（请说明）",
+        "zh-Hant": "其他產品（請說明）",
+        "en": "Other products (please specify)"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "q27",
+      "fieldId": "fldWUQflZC",
+      "fieldName": "队伍在选择机器人零部件时最看重哪些因素？",
+      "type": "checkbox",
+      "required": true,
+      "group": 4,
+      "title": {
+        "zh-CN": "队伍在选择机器人零部件时最看重哪些因素？",
+        "zh-Hant": "隊伍在選擇機器人零組件時最重視哪些因素？",
+        "en": "What matters most when your team selects robot components?"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "value": "可靠性",
+          "text": {
+            "zh-CN": "可靠性",
+            "zh-Hant": "可靠性",
+            "en": "Reliability"
+          }
+        },
+        {
+          "value": "价格",
+          "text": {
+            "zh-CN": "价格",
+            "zh-Hant": "價格",
+            "en": "Price"
+          }
+        },
+        {
+          "value": "重量",
+          "text": {
+            "zh-CN": "重量",
+            "zh-Hant": "重量",
+            "en": "Weight"
+          }
+        },
+        {
+          "value": "加工精度",
+          "text": {
+            "zh-CN": "加工精度",
+            "zh-Hant": "加工精度",
+            "en": "Manufacturing precision"
+          }
+        },
+        {
+          "value": "装配便利性",
+          "text": {
+            "zh-CN": "装配便利性",
+            "zh-Hant": "組裝便利性",
+            "en": "Ease of assembly"
+          }
+        },
+        {
+          "value": "产品规格丰富度",
+          "text": {
+            "zh-CN": "产品规格丰富度",
+            "zh-Hant": "產品規格豐富度",
+            "en": "Range of product specifications"
+          }
+        },
+        {
+          "value": "交货速度",
+          "text": {
+            "zh-CN": "交货速度",
+            "zh-Hant": "交貨速度",
+            "en": "Delivery speed"
+          }
+        },
+        {
+          "value": "技术文档",
+          "text": {
+            "zh-CN": "技术文档",
+            "zh-Hant": "技術文件",
+            "en": "Technical documentation"
+          }
+        },
+        {
+          "value": "CAD资源",
+          "text": {
+            "zh-CN": "CAD资源",
+            "zh-Hant": "CAD 資源",
+            "en": "CAD resources"
+          }
+        },
+        {
+          "value": "售后与技术支持",
+          "text": {
+            "zh-CN": "售后与技术支持",
+            "zh-Hant": "售後與技術支援",
+            "en": "After-sales and technical support"
+          }
+        },
+        {
+          "value": "与现有FRC生态的兼容性",
+          "text": {
+            "zh-CN": "与现有FRC生态的兼容性",
+            "zh-Hant": "與現有 FRC 生態系的相容性",
+            "en": "Compatibility with the existing FRC ecosystem"
+          }
+        }
+      ],
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q28",
+      "fieldId": "fldchSX7E6",
+      "fieldName": "你认为前市面上的FRC零部件有哪些需求尚未被充分满足？",
+      "type": "comment",
+      "required": false,
+      "group": 4,
+      "title": {
+        "zh-CN": "你认为前市面上的FRC零部件有哪些需求尚未被充分满足？",
+        "zh-Hant": "您認為目前市面上的 FRC 零組件有哪些需求尚未被充分滿足？",
+        "en": "Which needs are not yet adequately met by current FRC components?"
+      },
+      "description": {
+        "zh-CN": "建议100—300字。该问题用于帮助NICE Robotics了解真实的产品需求，不影响基础资格审核。",
+        "zh-Hant": "選填，建議 100–300 字。此問題用於協助 NICE Robotics 了解實際產品需求，不影響基本資格審核。",
+        "en": "Optional. Suggested length for a Chinese response: 100–300 characters. This helps NICE Robotics understand real product needs and does not affect basic eligibility. You may answer in English."
+      },
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q29",
+      "fieldId": "fldySjJZ5H",
+      "fieldName": "队伍对于2027赛季赛事的参赛计划是怎样的？",
+      "type": "comment",
+      "required": true,
+      "group": 5,
+      "title": {
+        "zh-CN": "队伍对于2027赛季赛事的参赛计划是怎样的？",
+        "zh-Hant": "隊伍對於 2027 賽季賽事的參賽計畫是什麼？",
+        "en": "What are your team's competition plans for the 2027 season?"
+      },
+      "description": {
+        "zh-CN": "请填写预计参加的赛事及其数量：Regional、Off-season。",
+        "zh-Hant": "請填寫預計參加的賽事及數量：Regional、Off-season。",
+        "en": "Specify the events you expect to attend and their counts: Regional and Off-season."
+      },
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q30",
+      "fieldId": "fldHFQ9LCb",
+      "fieldName": "队伍是否曾向其他FRC、FTC或FLL队伍提供技术支持？",
+      "type": "radiogroup",
+      "required": true,
+      "group": 5,
+      "title": {
+        "zh-CN": "队伍是否曾向其他FRC、FTC或FLL队伍提供技术支持？",
+        "zh-Hant": "隊伍是否曾向其他 FRC、FTC 或 FLL 隊伍提供技術支援？",
+        "en": "Has your team provided technical support to other FRC, FTC, or FLL teams?"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "value": "是，长期支持",
+          "text": {
+            "zh-CN": "是，长期支持",
+            "zh-Hant": "是，長期支援",
+            "en": "Yes, on an ongoing basis"
+          }
+        },
+        {
+          "value": "是，提供过短期帮助",
+          "text": {
+            "zh-CN": "是，提供过短期帮助",
+            "zh-Hant": "是，提供過短期協助",
+            "en": "Yes, for a short period"
+          }
+        },
+        {
+          "value": "尚未，但计划开展",
+          "text": {
+            "zh-CN": "尚未，但计划开展",
+            "zh-Hant": "尚未，但計畫開展",
+            "en": "Not yet, but we plan to"
+          }
+        },
+        {
+          "value": "否",
+          "text": {
+            "zh-CN": "否",
+            "zh-Hant": "否",
+            "en": "No"
+          }
+        }
+      ],
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q31",
+      "fieldId": "fldwzZSvhC",
+      "fieldName": "队伍愿意参与哪些合作活动？",
+      "type": "checkbox",
+      "required": true,
+      "group": 6,
+      "title": {
+        "zh-CN": "队伍愿意参与哪些合作活动？",
+        "zh-Hant": "隊伍願意參與哪些合作活動？",
+        "en": "Which partnership activities would your team like to participate in?"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "value": "NICE产品实际使用反馈",
+          "text": {
+            "zh-CN": "NICE产品实际使用反馈",
+            "zh-Hant": "NICE 產品實際使用回饋",
+            "en": "Feedback from using NICE products"
+          }
+        },
+        {
+          "value": "新品Beta Testing",
+          "text": {
+            "zh-CN": "新品Beta Testing",
+            "zh-Hant": "新品 Beta Testing",
+            "en": "New product beta testing"
+          }
+        },
+        {
+          "value": "安装与使用体验反馈",
+          "text": {
+            "zh-CN": "安装与使用体验反馈",
+            "zh-Hant": "安裝與使用體驗回饋",
+            "en": "Installation and user experience feedback"
+          }
+        },
+        {
+          "value": "失效案例与改进建议",
+          "text": {
+            "zh-CN": "失效案例与改进建议",
+            "zh-Hant": "失效案例與改善建議",
+            "en": "Failure reports and improvement suggestions"
+          }
+        },
+        {
+          "value": "技术文章共创",
+          "text": {
+            "zh-CN": "技术文章共创",
+            "zh-Hant": "技術文章共同撰寫",
+            "en": "Coauthoring technical articles"
+          }
+        },
+        {
+          "value": "Robot Reveal或产品应用视频",
+          "text": {
+            "zh-CN": "Robot Reveal或产品应用视频",
+            "zh-Hant": "Robot Reveal 或產品應用影片",
+            "en": "Robot Reveal or product application videos"
+          }
+        },
+        {
+          "value": "社交媒体内容合作",
+          "text": {
+            "zh-CN": "社交媒体内容合作",
+            "zh-Hant": "社群媒體內容合作",
+            "en": "Social media content collaboration"
+          }
+        },
+        {
+          "value": "线上技术交流",
+          "text": {
+            "zh-CN": "线上技术交流",
+            "zh-Hant": "線上技術交流",
+            "en": "Online technical discussions"
+          }
+        },
+        {
+          "value": "线下Workshop",
+          "text": {
+            "zh-CN": "线下Workshop",
+            "zh-Hant": "實體 Workshop",
+            "en": "In-person workshops"
+          }
+        },
+        {
+          "value": "展会或比赛现场展示",
+          "text": {
+            "zh-CN": "展会或比赛现场展示",
+            "zh-Hant": "展會或比賽現場展示",
+            "en": "Exhibitions or demonstrations at competitions"
+          }
+        },
+        {
+          "value": "开源CAD或技术资料分享",
+          "text": {
+            "zh-CN": "开源CAD或技术资料分享",
+            "zh-Hant": "開源 CAD 或技術資料分享",
+            "en": "Sharing open-source CAD or technical resources"
+          }
+        },
+        {
+          "value": "用户访谈",
+          "text": {
+            "zh-CN": "用户访谈",
+            "zh-Hant": "使用者訪談",
+            "en": "User interviews"
+          }
+        },
+        {
+          "value": "其他",
+          "text": {
+            "zh-CN": "其他",
+            "zh-Hant": "其他",
+            "en": "Other"
+          }
+        }
+      ],
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q31other",
+      "fieldId": "fld4cZkDC1",
+      "fieldName": "队伍愿意参与哪些合作活动？-其他-补充内容",
+      "type": "text",
+      "required": false,
+      "group": 6,
+      "otherFor": "q31",
+      "title": {
+        "zh-CN": "其他（请说明）",
+        "zh-Hant": "其他合作活動（請說明）",
+        "en": "Other partnership activities (please specify)"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "q32",
+      "fieldId": "fldyBol2MO",
+      "fieldName": "队伍是否愿意在赛季结束后提交一份简短的产品使用反馈？",
+      "type": "radiogroup",
+      "required": true,
+      "group": 6,
+      "title": {
+        "zh-CN": "队伍是否愿意在赛季结束后提交一份简短的产品使用反馈？",
+        "zh-Hant": "隊伍是否願意在賽季結束後送出一份簡短的產品使用回饋？",
+        "en": "Would your team submit a brief product-use report after the season?"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "value": "愿意",
+          "text": {
+            "zh-CN": "愿意",
+            "zh-Hant": "願意",
+            "en": "Yes"
+          }
+        },
+        {
+          "value": "需要了解具体要求",
+          "text": {
+            "zh-CN": "需要了解具体要求",
+            "zh-Hant": "需要了解具體要求",
+            "en": "We need more details"
+          }
+        },
+        {
+          "value": "不愿意",
+          "text": {
+            "zh-CN": "不愿意",
+            "zh-Hant": "不願意",
+            "en": "No"
+          }
+        }
+      ],
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q33",
+      "fieldId": "fldzXW8JtL",
+      "fieldName": "队伍是否愿意在适当位置展示Team NICE或NICE Robotics合作标识？",
+      "type": "checkbox",
+      "required": true,
+      "group": 6,
+      "title": {
+        "zh-CN": "队伍是否愿意在适当位置展示Team NICE或NICE Robotics合作标识？",
+        "zh-Hant": "隊伍是否願意在適當位置展示 Team NICE 或 NICE Robotics 合作標誌？",
+        "en": "Would your team display a Team NICE or NICE Robotics partnership logo in appropriate places?"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "value": "队伍网站",
+          "text": {
+            "zh-CN": "队伍网站",
+            "zh-Hant": "隊伍網站",
+            "en": "Team website"
+          }
+        },
+        {
+          "value": "社交媒体",
+          "text": {
+            "zh-CN": "社交媒体",
+            "zh-Hant": "社群媒體",
+            "en": "Social media"
+          }
+        },
+        {
+          "value": "机器人Sponsor Panel",
+          "text": {
+            "zh-CN": "机器人Sponsor Panel",
+            "zh-Hant": "機器人 Sponsor Panel",
+            "en": "Robot Sponsor Panel"
+          }
+        },
+        {
+          "value": "队服或宣传物料",
+          "text": {
+            "zh-CN": "队服或宣传物料",
+            "zh-Hant": "隊服或宣傳物料",
+            "en": "Team apparel or promotional materials"
+          }
+        },
+        {
+          "value": "技术文章或视频鸣谢",
+          "text": {
+            "zh-CN": "技术文章或视频鸣谢",
+            "zh-Hant": "技術文章或影片致謝",
+            "en": "Acknowledgments in technical articles or videos"
+          }
+        },
+        {
+          "value": "需要进一步沟通",
+          "text": {
+            "zh-CN": "需要进一步沟通",
+            "zh-Hant": "需要進一步溝通",
+            "en": "We would like to discuss this further"
+          }
+        },
+        {
+          "value": "不愿意",
+          "text": {
+            "zh-CN": "不愿意",
+            "zh-Hant": "不願意",
+            "en": "We are not willing"
+          }
+        }
+      ],
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q34",
+      "fieldId": "fldDuhcnGg",
+      "fieldName": "队伍是否愿意授权Team NICE转发申请中提交的队伍照片、机器人照片及公开发布内容？",
+      "type": "radiogroup",
+      "required": true,
+      "group": 6,
+      "title": {
+        "zh-CN": "队伍是否愿意授权Team NICE转发申请中提交的队伍照片、机器人照片及公开发布内容？",
+        "zh-Hant": "隊伍是否願意授權 Team NICE 轉發申請中送出的隊伍照片、機器人照片及公開發布內容？",
+        "en": "May Team NICE repost the team photos, robot photos, and public content included in your application?"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "value": "同意，Team NICE注明队伍来源后可以使用",
+          "text": {
+            "zh-CN": "同意，Team NICE注明队伍来源后可以使用",
+            "zh-Hant": "同意，Team NICE 註明隊伍來源後可以使用",
+            "en": "Yes, provided Team NICE credits our team"
+          }
+        },
+        {
+          "value": "部分同意，使用前需要再次确认",
+          "text": {
+            "zh-CN": "部分同意，使用前需要再次确认",
+            "zh-Hant": "部分同意，使用前需要再次確認",
+            "en": "Partially; please obtain our approval before each use"
+          }
+        },
+        {
+          "value": "不同意",
+          "text": {
+            "zh-CN": "不同意",
+            "zh-Hant": "不同意",
+            "en": "No"
+          }
+        }
+      ],
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q35",
+      "fieldId": "fldCc9csCw",
+      "fieldName": "关于NICE Robotics 与 Team NICE计划是否有其他希望了解的信息？",
+      "type": "comment",
+      "required": false,
+      "group": 6,
+      "title": {
+        "zh-CN": "关于NICE Robotics 与 Team NICE计划是否有其他希望了解的信息？",
+        "zh-Hant": "關於 NICE Robotics 與 Team NICE 計畫，是否有其他希望了解的資訊？",
+        "en": "What else would you like to know about NICE Robotics or the Team NICE program?"
+      },
+      "description": {
+        "zh-CN": "",
+        "zh-Hant": "",
+        "en": ""
+      },
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q36",
+      "fieldId": "fldnbN78Df",
+      "fieldName": "信息真实性确认",
+      "type": "checkbox",
+      "required": true,
+      "group": 7,
+      "title": {
+        "zh-CN": "信息真实性确认",
+        "zh-Hant": "資訊真實性確認",
+        "en": "Accuracy of information"
+      },
+      "description": {
+        "zh-CN": "若无异议，需勾选所有选项表示同意",
+        "zh-Hant": "若您同意，請勾選全部選項以確認。",
+        "en": "If you agree, select every statement to confirm your acceptance."
+      },
+      "choices": [
+        {
+          "value": "我确认本申请中提供的信息真实、准确，并已获得队伍授权。",
+          "text": {
+            "zh-CN": "我确认本申请中提供的信息真实、准确，并已获得队伍授权。",
+            "zh-Hant": "我確認本申請中提供的資訊真實、準確，並已獲得隊伍授權。",
+            "en": "I confirm that the information in this application is true and accurate and that my team has authorized this submission."
+          }
+        },
+        {
+          "value": "我理解提交申请并不代表一定获得赞助。",
+          "text": {
+            "zh-CN": "我理解提交申请并不代表一定获得赞助。",
+            "zh-Hant": "我理解送出申請並不代表一定獲得贊助。",
+            "en": "I understand that submitting an application does not guarantee sponsorship."
+          }
+        },
+        {
+          "value": "我理解Team NICE有权根据申请质量、预算及项目安排决定入选名单。",
+          "text": {
+            "zh-CN": "我理解Team NICE有权根据申请质量、预算及项目安排决定入选名单。",
+            "zh-Hant": "我理解 Team NICE 有權根據申請品質、預算及計畫安排決定入選名單。",
+            "en": "I understand that Team NICE may select teams based on application quality, budget, and program arrangements."
+          }
+        },
+        {
+          "value": "如发现虚假信息，Team NICE有权取消申请或终止合作。",
+          "text": {
+            "zh-CN": "如发现虚假信息，Team NICE有权取消申请或终止合作。",
+            "zh-Hant": "如發現不實資訊，Team NICE 有權取消申請或終止合作。",
+            "en": "If false information is discovered, Team NICE may cancel the application or terminate the partnership."
+          }
+        }
+      ],
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q37",
+      "fieldId": "fld81u9tBN",
+      "fieldName": "代金券使用规则确认",
+      "type": "checkbox",
+      "required": true,
+      "group": 7,
+      "title": {
+        "zh-CN": "代金券使用规则确认",
+        "zh-Hant": "抵用券使用規則確認",
+        "en": "Voucher terms"
+      },
+      "description": {
+        "zh-CN": "若无异议，需勾选所有选项表示同意",
+        "zh-Hant": "若您同意，請勾選全部選項以確認。",
+        "en": "If you agree, select every statement to confirm your acceptance."
+      },
+      "choices": [
+        {
+          "value": "代金券仅可用于购买指定的NICE Robotics产品。",
+          "text": {
+            "zh-CN": "代金券仅可用于购买指定的NICE Robotics产品。",
+            "zh-Hant": "抵用券僅可用於購買指定的 NICE Robotics 產品。",
+            "en": "Vouchers may only be used to purchase designated NICE Robotics products."
+          }
+        },
+        {
+          "value": "代金券不得兑换现金。",
+          "text": {
+            "zh-CN": "代金券不得兑换现金。",
+            "zh-Hant": "抵用券不得兌換現金。",
+            "en": "Vouchers cannot be redeemed for cash."
+          }
+        },
+        {
+          "value": "代金券原则上不得转让或出售。",
+          "text": {
+            "zh-CN": "代金券原则上不得转让或出售。",
+            "zh-Hant": "抵用券原則上不得轉讓或出售。",
+            "en": "As a general rule, vouchers may not be transferred or sold."
+          }
+        },
+        {
+          "value": "代金券须在规定有效期内使用。",
+          "text": {
+            "zh-CN": "代金券须在规定有效期内使用。",
+            "zh-Hant": "抵用券須在規定有效期內使用。",
+            "en": "Vouchers must be used within their stated validity period."
+          }
+        },
+        {
+          "value": "运费、税费及不适用商品以最终活动规则为准。",
+          "text": {
+            "zh-CN": "运费、税费及不适用商品以最终活动规则为准。",
+            "zh-Hant": "運費、稅費及不適用商品以最終活動規則為準。",
+            "en": "Shipping costs, taxes, and excluded products are subject to the final program terms."
+          }
+        },
+        {
+          "value": "如因地区、库存或物流原因无法完成订单，双方将协商处理。",
+          "text": {
+            "zh-CN": "如因地区、库存或物流原因无法完成订单，双方将协商处理。",
+            "zh-Hant": "如因地區、庫存或物流原因無法完成訂單，雙方將協商處理。",
+            "en": "If an order cannot be fulfilled due to location, inventory, or shipping restrictions, both parties will discuss a solution."
+          }
+        }
+      ],
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q38",
+      "fieldId": "fldTMEROgV",
+      "fieldName": "合作责任确认",
+      "type": "checkbox",
+      "required": true,
+      "group": 7,
+      "title": {
+        "zh-CN": "合作责任确认",
+        "zh-Hant": "合作責任確認",
+        "en": "Partnership responsibilities"
+      },
+      "description": {
+        "zh-CN": "如队伍入选，队伍原则上同意以下事项。若无异议，需勾选所有选项表示同意",
+        "zh-Hant": "若隊伍獲選，隊伍原則上同意以下事項。若無異議，請勾選全部選項以確認。",
+        "en": "If selected, the team agrees in principle to the following responsibilities. If you agree, select every statement."
+      },
+      "choices": [
+        {
+          "value": "合理使用Team NICE提供的支持资源；",
+          "text": {
+            "zh-CN": "合理使用Team NICE提供的支持资源；",
+            "zh-Hant": "合理使用 Team NICE 提供的支援資源；",
+            "en": "Use the support provided by Team NICE responsibly."
+          }
+        },
+        {
+          "value": "在赛季期间保持有效联系；",
+          "text": {
+            "zh-CN": "在赛季期间保持有效联系；",
+            "zh-Hant": "在賽季期間保持有效聯繫；",
+            "en": "Maintain effective communication throughout the season."
+          }
+        },
+        {
+          "value": "在适当渠道说明与Team NICE的合作关系；",
+          "text": {
+            "zh-CN": "在适当渠道说明与Team NICE的合作关系；",
+            "zh-Hant": "在適當管道說明與 Team NICE 的合作關係；",
+            "en": "Disclose the partnership with Team NICE through appropriate channels."
+          }
+        },
+        {
+          "value": "以专业、诚信且符合FIRST精神的方式代表团队。",
+          "text": {
+            "zh-CN": "以专业、诚信且符合FIRST精神的方式代表团队。",
+            "zh-Hant": "以專業、誠信且符合 FIRST 精神的方式代表團隊。",
+            "en": "Represent the team professionally, honestly, and in the spirit of FIRST."
+          }
+        }
+      ],
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    },
+    {
+      "id": "q39",
+      "fieldId": "fldFBDLb4a",
+      "fieldName": "申请人电子签名",
+      "type": "text",
+      "required": true,
+      "group": 7,
+      "title": {
+        "zh-CN": "申请人电子签名",
+        "zh-Hant": "申請人電子簽名",
+        "en": "Applicant's electronic signature"
+      },
+      "description": {
+        "zh-CN": "请填写申请人身份证件上的完整姓名。",
+        "zh-Hant": "請填寫申請人身分證明文件上的完整姓名。",
+        "en": "Enter your full name as it appears on your identification document."
+      },
+      "sourceRule": {
+        "conditions": [
+          [
+            "队伍是否授权您代表团队提交本次申请？",
+            "==",
+            [
+              "是"
+            ]
+          ]
+        ],
+        "logic": "and"
+      }
+    }
+  ]
+}

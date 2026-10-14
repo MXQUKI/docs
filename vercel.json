@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "api/applications.ts": { "maxDuration": 60 },
+    "api/retry-applications.ts": { "maxDuration": 120 }
+  },
+  "crons": [{ "path": "/api/retry-applications", "schedule": "*/5 * * * *" }],
   "redirects": [
     {
       "source": "/transmission",

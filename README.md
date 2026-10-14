@@ -27,6 +27,8 @@
 
 语言 IP 兜底使用独立的 `api/locale.ts` Node.js Vercel Function，所有文档仍静态构建，不需要 Astro 服务端适配器。
 
+Team NICE 三语申请页复用静态站，使用 SurveyJS 和独立 Vercel Functions 将答案写入同一飞书数据表。提交可靠性需要专用 Neon 暂存数据库；数据库仅用于申请功能。配置、权限、测试和上线步骤见 [申请页部署与维护](agent-logs/APPLICATIONS.md)。未完成配置时不开放正式收集。
+
 ## 三语内容维护
 
 - 简体页面保持现有路径；繁体放在 `src/content/docs/zh-hant/`，英文放在 `src/content/docs/en/`，文件相对路径和章节层级一一对应。
