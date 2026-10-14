@@ -1,10 +1,11 @@
 # Handoff
 
-更新时间：2026-10-14 09:01:36 +02:00
+更新时间：2026-10-14 09:09:36 +02:00
 
 ## Team NICE 三语官网申请页（预览已部署，生产未发布）
 
 - 分支 `codex/frc-trilingual-application`，基于原 `main` 的 `b671d35`。保留 Astro + Starlight 静态输出，新增 SurveyJS 问卷与独立 Node.js Vercel Functions。
+- 代码提交 `8956ddb`；草稿 PR [#4](https://github.com/nicerobotics/docs/pull/4) 已创建（源为 MXQUKI fork）。用户随后开通主仓库写权限，已将同一分支推送到 nicerobotics/docs；继续复用现有 PR，未合并 main。
 - 页面：`/team-nice/frc-2027/`、`/zh-hant/team-nice/frc-2027/`、`/en/team-nice/frc-2027/`；三语首页新增文本入口，不新增无产品预览图的卡片。
 - 用户最终指定**以当前飞书问卷为唯一内容和逻辑基准**，不再采用原来的 39 题 Wiki 快照。已经读取并逐项核对 40 个主问题，另接入 4 个“其他”补充字段。选购因素为多选而非排序；新增了赛季消费金额题，联系人身份和产品选项使用最新版。
 - `src/content/docs/_data/frc-2027.json` 保存三语题目和原始 `sourceRule`；前后端分别从该规则生成/计算显隐，服务器清除隐藏答案后只校验有效题目。未额外添加“其他项目/未授权不能提交”的拒绝规则。三个声明组按原说明全部勾选。
